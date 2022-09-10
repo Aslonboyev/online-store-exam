@@ -1,4 +1,5 @@
-﻿using StoreProject.Domain.Common;
+﻿using OnlineStore.Domain.Enums;
+using StoreProject.Domain.Common;
 using StoreProject.Domain.Entities.Categories;
 using StoreProject.Domain.Entities.Discounts;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +18,9 @@ namespace StoreProject.Domain.Entities.Products
 
         [Required]
         public decimal Quantity { get; set; }
+
+        [Required]
+        public ProductParameter ProductParameter { get; set; }
 
         [Required]
         public string ImagePath { get; set; }
