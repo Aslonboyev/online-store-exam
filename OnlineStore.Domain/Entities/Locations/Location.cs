@@ -1,8 +1,8 @@
-﻿using StoreProject.Domain.Common;
-using StoreProject.Domain.Enums;
+﻿using OnlineStore.Domain.Common;
+using OnlineStore.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Locations
+namespace OnlineStore.Domain.Entities.Locations
 {
     public class Location : Auditable
     {

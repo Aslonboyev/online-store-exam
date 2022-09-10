@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreProject.Domain.Common
+namespace OnlineStore.Domain.Common
 {
     public abstract class BaseEntity
     {

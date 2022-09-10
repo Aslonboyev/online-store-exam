@@ -1,10 +1,10 @@
 ﻿using OnlineStore.Domain.Enums;
-using StoreProject.Domain.Common;
-using StoreProject.Domain.Entities.Categories;
-using StoreProject.Domain.Entities.Discounts;
+using OnlineStore.Domain.Common;
+using OnlineStore.Domain.Entities.Categories;
+using OnlineStore.Domain.Entities.Discounts;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Products
+namespace OnlineStore.Domain.Entities.Products
 {
     public class Product : Auditable
     {

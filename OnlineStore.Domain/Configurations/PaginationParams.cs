@@ -1,4 +1,4 @@
-﻿namespace StoreProject.Domain.Configurations
+﻿namespace OnlineStore.Domain.Configurations
 {
     public class PaginationParams
     {

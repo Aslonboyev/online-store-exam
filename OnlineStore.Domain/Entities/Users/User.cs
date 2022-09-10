@@ -1,8 +1,8 @@
-﻿using StoreProject.Domain.Common;
-using StoreProject.Domain.Entities.Orders;
+﻿using OnlineStore.Domain.Common;
+using OnlineStore.Domain.Entities.Orders;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Users
+namespace OnlineStore.Domain.Entities.Users
 {
     public class User : Auditable
     {

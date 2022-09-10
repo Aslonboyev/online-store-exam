@@ -1,4 +1,4 @@
-﻿namespace StoreProject.Domain.Constants
+﻿namespace OnlineStore.Domain.Constants
 {
     public class DatabaseConstant
     {

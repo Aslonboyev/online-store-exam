@@ -1,7 +1,7 @@
-﻿using StoreProject.Domain.Enums;
+﻿using OnlineStore.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Common
+namespace OnlineStore.Domain.Common
 {
     public abstract class Auditable : BaseEntity
     {
