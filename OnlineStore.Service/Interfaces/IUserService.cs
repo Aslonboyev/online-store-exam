@@ -21,5 +21,7 @@ namespace OnlineStore.Service.Interfaces
         Task<BaseResponse<User>> GetAsync(Expression<Func<User, bool>> expression);
 
         Task<BaseResponse<IEnumerable<User>>> GetAllAsync(Expression<Func<User, bool>> expression = null);
+
+        Task<BaseResponse<bool>> LogInAsync(string username, string passowrd);
     }
 }

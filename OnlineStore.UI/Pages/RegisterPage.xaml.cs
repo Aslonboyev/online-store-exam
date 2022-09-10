@@ -1,4 +1,5 @@
-﻿using OnlineStore.Service.DTOs.UserDTOs;
+﻿using OnlineStore.Domain.Entities.Users;
+using OnlineStore.Service.DTOs.UserDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using System;
@@ -23,20 +24,18 @@ namespace OnlineStore.UI.Pages
     public partial class RegisterPage : Window
     {
         private readonly IUserService _userService;
-        private readonly MainWindow _mainWindow;
 
         public RegisterPage()
         {
-            _mainWindow = new MainWindow();
-            
             _userService = new UserService();
 
             InitializeComponent();
         }
-
         private async void SignUpBtn(object sender, RoutedEventArgs e)
-        {  
-            if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null && 
+        {
+            MainWindow mainWindow = new MainWindow();
+
+            if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
                 firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
                 phonetxt.Text is not null && passwordtxt.Password is not null)
             {
@@ -52,9 +51,9 @@ namespace OnlineStore.UI.Pages
 
                 var result = await _userService.CreateAsync(userCreationDTO);
 
-                if (result.Data is not null)
+                if (result is not null)
                 {
-                    _mainWindow.Show();
+                    mainWindow.Show();
                     this.Close();
                 }
             }
@@ -62,7 +61,8 @@ namespace OnlineStore.UI.Pages
 
         private void LoginBtn(object sender, RoutedEventArgs e)
         {
-            _mainWindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 

@@ -24,11 +24,11 @@ namespace OnlineStore.UI
     public partial class MainWindow : Window
     {
         private readonly IUserService _userService;
-        private readonly RegisterPage registerPage;
+        private readonly RegisterPage _registerPage;
 
         public MainWindow()
         {
-            registerPage = new RegisterPage();
+            _registerPage = new RegisterPage();
 
             _userService = new UserService();
 
@@ -50,11 +50,11 @@ namespace OnlineStore.UI
         {
             if (Usernametxt.Text is not null || Passwordtxt.Password is not null)
             {
-                bool result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
+                var result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
 
-                if (result)
+                if (result.Data)
                 {
-                    registerPage.Show();
+                    _registerPage.Show();
                     this.Close();
                 }
                 else
@@ -67,7 +67,7 @@ namespace OnlineStore.UI
 
         private void CreateBtn(object sender, RoutedEventArgs e)
         {
-            registerPage.Show();
+            _registerPage.Show();
 
             this.Close();
         }
