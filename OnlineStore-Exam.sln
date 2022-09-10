@@ -3,15 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore-Exam", "OnlineStore-Exam\OnlineStore-Exam.csproj", "{FC64ED26-F459-47B9-A796-A7C1F4B020B6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Domain", "OnlineStore.Domain\OnlineStore.Domain.csproj", "{51105B6C-FDA6-4354-927A-1EF78FC28185}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Test", "OnlineStore.Test\OnlineStore.Test.csproj", "{E2C2E371-9988-44AC-8BC5-A247AAADD1CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data", "OnlineStore.Data\OnlineStore.Data.csproj", "{F6EA8BBA-ADCA-4930-83BA-C2A9CE23F29B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Data", "OnlineStore.Data\OnlineStore.Data.csproj", "{F6EA8BBA-ADCA-4930-83BA-C2A9CE23F29B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Service", "OnlineStore.Service\OnlineStore.Service.csproj", "{97FE9C5E-771C-41E0-8552-47896C691F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Service", "OnlineStore.Service\OnlineStore.Service.csproj", "{97FE9C5E-771C-41E0-8552-47896C691F30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC64ED26-F459-47B9-A796-A7C1F4B020B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC64ED26-F459-47B9-A796-A7C1F4B020B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC64ED26-F459-47B9-A796-A7C1F4B020B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC64ED26-F459-47B9-A796-A7C1F4B020B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51105B6C-FDA6-4354-927A-1EF78FC28185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51105B6C-FDA6-4354-927A-1EF78FC28185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51105B6C-FDA6-4354-927A-1EF78FC28185}.Release|Any CPU.ActiveCfg = Release|Any CPU

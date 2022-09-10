@@ -30,6 +30,8 @@ namespace OnlineStore.Service.Services
             {
                 cfg.AddProfile<MappingProfile>();
             });
+
+            _mapper = config.CreateMapper();
         }
 
         public async Task<BaseResponse<Location>> CreateAsync(LocationCreationDTO entity)

@@ -16,48 +16,50 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
-    public class TypeCategoryService : ITypeCategoryService
+    public class CategoryService : ICategoryService
     {
-        private readonly ITypeCategoryRepository _typeCategoryRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public TypeCategoryService()
+        public CategoryService()
         {
-            _typeCategoryRepository = new TypeCategoryRepository();
+            _categoryRepository = new CategoryRepository();
 
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<MappingProfile>();
             });
+
+            _mapper = config.CreateMapper();
         }
 
-        public async Task<BaseResponse<TypeCategory>> CreateAsync(CategoryCreationDTO entity)
+        public async Task<BaseResponse<Category>> CreateAsync(CategoryCreationDTO entity)
         {
-            var response = new BaseResponse<TypeCategory>();
+            var response = new BaseResponse<Category>();
 
-            if (await _typeCategoryRepository.GetAsync(p => p.Name == entity.Name) is not null)
+            if (await _categoryRepository.GetAsync(p => p.Name == entity.Name) is not null)
             {
                 response.Error = new ErrorResponse(400, "Client is already exists");
 
                 return response;
             }
 
-            var entityToCreate = _mapper.Map<TypeCategory>(entity);
+            var entityToCreate = _mapper.Map<Category>(entity);
 
             entityToCreate.Create();
 
-            response.Data = await _typeCategoryRepository.CreateAsync(entityToCreate);
+            response.Data = await _categoryRepository.CreateAsync(entityToCreate);
 
-            await _typeCategoryRepository.SaveChangesAsync();
+            await _categoryRepository.SaveChangesAsync();
 
             return response;
         }
 
-        public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<TypeCategory, bool>> expression)
+        public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<Category, bool>> expression)
         {
             var response = new BaseResponse<bool>();
 
-            var entity = await _typeCategoryRepository.GetAsync(expression);
+            var entity = await _categoryRepository.GetAsync(expression);
 
             if (entity is null || entity.ItemState == ItemState.Deleted)
             {
@@ -69,7 +71,7 @@ namespace OnlineStore.Service.Services
 
             entity.Delete();
 
-            await _typeCategoryRepository.SaveChangesAsync();
+            await _categoryRepository.SaveChangesAsync();
 
             response.Data = true;
 
@@ -77,20 +79,20 @@ namespace OnlineStore.Service.Services
 
         }
 
-        public async Task<BaseResponse<IEnumerable<TypeCategory>>> GetAllAsync(Expression<Func<TypeCategory, bool>> expression = null)
+        public async Task<BaseResponse<IEnumerable<Category>>> GetAllAsync(Expression<Func<Category, bool>> expression = null)
         {
-            var response = new BaseResponse<IEnumerable<TypeCategory>>();
+            var response = new BaseResponse<IEnumerable<Category>>();
 
-            response.Data = _typeCategoryRepository.GetAll(expression).Where(p => p.ItemState != ItemState.Deleted);
+            response.Data = _categoryRepository.GetAll(expression).Where(p => p.ItemState != ItemState.Deleted);
 
             return response;
         }
 
-        public async Task<BaseResponse<TypeCategory>> GetAsync(Expression<Func<TypeCategory, bool>> expression)
+        public async Task<BaseResponse<Category>> GetAsync(Expression<Func<Category, bool>> expression)
         {
-            var response = new BaseResponse<TypeCategory>();
+            var response = new BaseResponse<Category>();
 
-            response.Data = await _typeCategoryRepository.GetAsync(expression);
+            response.Data = await _categoryRepository.GetAsync(expression);
 
             if (response.Data is null || response.Data.ItemState == ItemState.Deleted)
             {
@@ -102,11 +104,11 @@ namespace OnlineStore.Service.Services
             return response;
         }
 
-        public async Task<BaseResponse<TypeCategory>> UpdateAsync(long id, CategoryCreationDTO entity)
+        public async Task<BaseResponse<Category>> UpdateAsync(long id, CategoryCreationDTO entity)
         {
-            var response = new BaseResponse<TypeCategory>();
+            var response = new BaseResponse<Category>();
 
-            var entityToUpdate = await _typeCategoryRepository.GetAsync(entity => entity.Id == id);
+            var entityToUpdate = await _categoryRepository.GetAsync(entity => entity.Id == id);
 
             if (entityToUpdate is null || entityToUpdate.ItemState == ItemState.Deleted)
             {
@@ -119,9 +121,9 @@ namespace OnlineStore.Service.Services
 
             entityToUpdate.Update();
 
-            _typeCategoryRepository.Update(entityToUpdate);
+            _categoryRepository.Update(entityToUpdate);
 
-            await _typeCategoryRepository.SaveChangesAsync();
+            await _categoryRepository.SaveChangesAsync();
 
             return response;
         }

@@ -30,9 +30,9 @@ namespace OnlineStore.Service.Mappers
             CreateMap<Discount, DiscountCreationDTO>().ReverseMap();
             CreateMap<Order, OrderCreationDTO>().ReverseMap();
             CreateMap<Product, ProductCreationDTO>().ReverseMap();
-            CreateMap<TypeCategory, CategoryCreationDTO>().ReverseMap();
+            CreateMap<OrderDetail, OrderDetailCreationDTO>().ReverseMap();
             CreateMap<Location, LocationCreationDTO>().ReverseMap();
-            CreateMap<ProductCategory, ProductCategoryCreationDTO>().ReverseMap();
+            CreateMap<Category, CategoryCreationDTO>().ReverseMap();
         }
     }
 }

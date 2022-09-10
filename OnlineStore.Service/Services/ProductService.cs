@@ -29,6 +29,8 @@ namespace OnlineStore.Service.Services
             {
                 cfg.AddProfile<MappingProfile>();
             });
+
+            _mapper = config.CreateMapper();
         }
 
         public async Task<BaseResponse<Product>> CreateAsync(ProductCreationDTO entity)

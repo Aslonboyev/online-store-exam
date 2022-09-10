@@ -29,6 +29,8 @@ namespace OnlineStore.Service.Services
             {
                 cfg.AddProfile<MappingProfile>();
             });
+
+            _mapper = config.CreateMapper();
         }
 
         public async Task<BaseResponse<Contact>> CreateAsync(ContactCreationDTO entity)
@@ -38,8 +40,7 @@ namespace OnlineStore.Service.Services
             if (await _contactRepository.GetAsync(p => p.Email == entity.Email || 
                                                   p.InstagramName == entity.InstagramName || 
                                                   p.Phone == entity.Phone || 
-                                                  p.TelegramName == entity.TelegramName ||
-                                                  p.FacebookName == entity.FacebookName) is not null)
+                                                  p.TelegramName == entity.TelegramName) is not null)
             {
                 response.Error = new ErrorResponse(400, "Client is already exists");
 

@@ -3,8 +3,10 @@ using OnlineStore.Data.IRepositories;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Domain.Common.Responses;
 using OnlineStore.Domain.Entities.Categories;
+using OnlineStore.Domain.Entities.Orders;
 using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.CategoryDTOs;
+using OnlineStore.Service.DTOs.OrderDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
 using System;
@@ -16,42 +18,44 @@ using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
-    public class ProductCategoryService : IProductCategoryService
+    public class OrderDetailService : IOrderDetailService
     {
-        private readonly IProductCategoryRepository _productCategoryRepository;
+        private readonly IOrderDetailRepository _orderDetailRepository;
         private readonly IMapper _mapper;
 
-        public ProductCategoryService()
+        public OrderDetailService()
         {
-            _productCategoryRepository = new ProductCategoryRepository();
+            _orderDetailRepository = new OrderDetailRepository();
 
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<MappingProfile>();
             });
+
+            _mapper = config.CreateMapper();
         }
 
-        public async Task<BaseResponse<ProductCategory>> CreateAsync(ProductCategoryCreationDTO entity)
+        public async Task<BaseResponse<OrderDetail>> CreateAsync(OrderDetailCreationDTO entity)
         {
 
-            var response = new BaseResponse<ProductCategory>();
+            var response = new BaseResponse<OrderDetail>();
 
-            var entityToCreate = _mapper.Map<ProductCategory>(entity);
+            var entityToCreate = _mapper.Map<OrderDetail>(entity);
 
             entityToCreate.Create();
 
-            response.Data = await _productCategoryRepository.CreateAsync(entityToCreate);
+            response.Data = await _orderDetailRepository.CreateAsync(entityToCreate);
 
-            await _productCategoryRepository.SaveChangesAsync();
+            await _orderDetailRepository.SaveChangesAsync();
 
             return response;
         }
 
-        public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<ProductCategory, bool>> expression)
+        public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<OrderDetail, bool>> expression)
         {
             var response = new BaseResponse<bool>();
 
-            var entity = await _productCategoryRepository.GetAsync(expression);
+            var entity = await _orderDetailRepository.GetAsync(expression);
 
             if (entity is null || entity.ItemState == ItemState.Deleted)
             {
@@ -63,7 +67,7 @@ namespace OnlineStore.Service.Services
 
             entity.Delete();
 
-            await _productCategoryRepository.SaveChangesAsync();
+            await _orderDetailRepository.SaveChangesAsync();
 
             response.Data = true;
 
@@ -71,20 +75,20 @@ namespace OnlineStore.Service.Services
 
         }
 
-        public async Task<BaseResponse<IEnumerable<ProductCategory>>> GetAllAsync(Expression<Func<ProductCategory, bool>> expression = null)
+        public async Task<BaseResponse<IEnumerable<OrderDetail>>> GetAllAsync(Expression<Func<OrderDetail, bool>> expression = null)
         {
-            var response = new BaseResponse<IEnumerable<ProductCategory>>();
+            var response = new BaseResponse<IEnumerable<OrderDetail>>();
 
-            response.Data = _productCategoryRepository.GetAll(expression).Where(p => p.ItemState != ItemState.Deleted);
+            response.Data = _orderDetailRepository.GetAll(expression).Where(p => p.ItemState != ItemState.Deleted);
 
             return response;
         }
 
-        public async Task<BaseResponse<ProductCategory>> GetAsync(Expression<Func<ProductCategory, bool>> expression)
+        public async Task<BaseResponse<OrderDetail>> GetAsync(Expression<Func<OrderDetail, bool>> expression)
         {
-            var response = new BaseResponse<ProductCategory>();
+            var response = new BaseResponse<OrderDetail>();
 
-            response.Data = await _productCategoryRepository.GetAsync(expression);
+            response.Data = await _orderDetailRepository.GetAsync(expression);
 
             if (response.Data is null || response.Data.ItemState == ItemState.Deleted)
             {
@@ -96,11 +100,11 @@ namespace OnlineStore.Service.Services
             return response;
         }
 
-        public async Task<BaseResponse<ProductCategory>> UpdateAsync(long id, ProductCategoryCreationDTO entity)
+        public async Task<BaseResponse<OrderDetail>> UpdateAsync(long id, OrderDetailCreationDTO entity)
         {
-            var response = new BaseResponse<ProductCategory>();
+            var response = new BaseResponse<OrderDetail>();
 
-            var entityToUpdate = await _productCategoryRepository.GetAsync(entity => entity.Id == id);
+            var entityToUpdate = await _orderDetailRepository.GetAsync(entity => entity.Id == id);
 
             if (entityToUpdate is null || entityToUpdate.ItemState == ItemState.Deleted)
             {
@@ -113,9 +117,9 @@ namespace OnlineStore.Service.Services
 
             entityToUpdate.Update();
 
-            _productCategoryRepository.Update(entityToUpdate);
+            _orderDetailRepository.Update(entityToUpdate);
 
-            await _productCategoryRepository.SaveChangesAsync();
+            await _orderDetailRepository.SaveChangesAsync();
 
             return response;
         }
