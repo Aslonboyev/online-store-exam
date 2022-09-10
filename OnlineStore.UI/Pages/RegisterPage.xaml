@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:StoreProject.UI.Pages"
+        xmlns:local="clr-namespace:OnlineStore.UI.Pages"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Width="1000"
@@ -249,6 +249,7 @@
 
                     <PasswordBox
                         FontSize="16"
+                        Margin="0, 16"
                         x:Name="repeatPasswordtxt"
                         materialDesign:HintAssist.FloatingOffset="0,-18"
                         materialDesign:HintAssist.Hint="Repeat Password"
@@ -256,9 +257,9 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
-                    <CheckBox Margin="0,30,0,20" FontSize="13">
+                    <CheckBox Margin="0,30,0,20" FontSize="13" Checked="CheckBox" x:Name="Check">
                         <TextBlock>
-                            <Run Foreground="#b6b6b6">By signing up I agree with</Run>
+                            <Run Foreground="#b6b6b6" >By signing up I agree with</Run>
                             <Run Foreground="#07BF96">terms and conditions</Run>
                         </TextBlock>
                     </CheckBox>

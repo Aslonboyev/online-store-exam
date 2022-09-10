@@ -24,6 +24,7 @@ namespace OnlineStore.UI.Pages
     public partial class RegisterPage : Window
     {
         private readonly IUserService _userService;
+        private Boolean _isChecked = false;
 
         public RegisterPage()
         {
@@ -33,11 +34,11 @@ namespace OnlineStore.UI.Pages
         }
         private async void SignUpBtn(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
+             MainWindow mainWindow = new MainWindow();
 
             if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
                 firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
-                phonetxt.Text is not null && passwordtxt.Password is not null)
+                phonetxt.Text is not null && passwordtxt.Password is not null && _isChecked is true)
             {
                 UserCreationDTO userCreationDTO = new UserCreationDTO()
                 {
@@ -62,6 +63,7 @@ namespace OnlineStore.UI.Pages
         private void LoginBtn(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+
             mainWindow.Show();
             this.Close();
         }
@@ -69,6 +71,12 @@ namespace OnlineStore.UI.Pages
         private void exitApp(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void CheckBox(object sender, RoutedEventArgs e)
+        {
+            if(Check.IsChecked is true)
+                _isChecked = true;
         }
     }
 }
