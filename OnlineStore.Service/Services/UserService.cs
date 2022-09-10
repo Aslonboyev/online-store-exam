@@ -6,6 +6,7 @@ using OnlineStore.Domain.Entities.Locations;
 using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.UserDTOs;
+using OnlineStore.Service.Extentions;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
 using System;
@@ -128,6 +129,24 @@ namespace OnlineStore.Service.Services
             _userRepository.Update(entityToUpdate);
 
             await _userRepository.SaveChangesAsync();
+
+            return response;
+        }
+
+        public async Task<BaseResponse<bool>> LogInAsync(string username, string password)
+        {
+            var response = new BaseResponse<bool>();
+
+            var result = await _userRepository.GetAsync(p => p.Username == username);
+
+            if(result is not null && result.Password == password.GetHash())
+            {
+                response.Data = true;
+                
+                return response;
+            }
+
+            response.Data = false;
 
             return response;
         }
