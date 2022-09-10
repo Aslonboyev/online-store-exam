@@ -1,7 +1,7 @@
-﻿using StoreProject.Domain.Common;
+﻿using OnlineStore.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Contacts
+namespace OnlineStore.Domain.Entities.Contacts
 {
     public class Contact : Auditable
     {

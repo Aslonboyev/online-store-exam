@@ -1,11 +1,11 @@
 ﻿using OnlineStore.Domain.Entities.Orders;
-using StoreProject.Domain.Common;
-using StoreProject.Domain.Entities.Locations;
-using StoreProject.Domain.Entities.Users;
-using StoreProject.Domain.Enums;
+using OnlineStore.Domain.Common;
+using OnlineStore.Domain.Entities.Locations;
+using OnlineStore.Domain.Entities.Users;
+using OnlineStore.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Orders
+namespace OnlineStore.Domain.Entities.Orders
 {
     public class Order : Auditable
     {

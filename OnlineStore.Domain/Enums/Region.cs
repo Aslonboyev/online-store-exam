@@ -1,4 +1,4 @@
-﻿namespace StoreProject.Domain.Enums
+﻿namespace OnlineStore.Domain.Enums
 {
     public enum Region
     {

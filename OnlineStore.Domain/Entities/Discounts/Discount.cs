@@ -1,7 +1,7 @@
-﻿using StoreProject.Domain.Common;
+﻿using OnlineStore.Domain.Common;
 using System.ComponentModel.DataAnnotations;
 
-namespace StoreProject.Domain.Entities.Discounts
+namespace OnlineStore.Domain.Entities.Discounts
 {
     public class Discount : Auditable
     {

@@ -1,6 +1,6 @@
-﻿using StoreProject.Domain.Common;
-using StoreProject.Domain.Entities.Orders;
-using StoreProject.Domain.Entities.Products;
+﻿using OnlineStore.Domain.Common;
+using OnlineStore.Domain.Entities.Orders;
+using OnlineStore.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
