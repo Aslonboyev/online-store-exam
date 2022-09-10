@@ -53,6 +53,8 @@ namespace OnlineStore.Service.Services
 
             entityToCreate.Create();
 
+            entityToCreate.Password = entityToCreate.Password.GetHash();
+
             response.Data = await _userRepository.CreateAsync(entityToCreate);
 
             await _userRepository.SaveChangesAsync();
