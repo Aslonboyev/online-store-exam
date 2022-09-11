@@ -45,7 +45,7 @@ namespace OnlineStore.UI
 
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
-            RegisterPage registerPage = new RegisterPage();
+            MainPage mainPage = new MainPage();
 
             if (Usernametxt.Text is not null || Passwordtxt.Password is not null)
             {
@@ -53,7 +53,7 @@ namespace OnlineStore.UI
 
                 if (result.Data)
                 {
-                    registerPage.Show();
+                    mainPage.Show();
                     this.Close();
                 }
                 else

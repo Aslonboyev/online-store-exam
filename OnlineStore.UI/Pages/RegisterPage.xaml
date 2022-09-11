@@ -257,7 +257,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
-                    <CheckBox Margin="0,30,0,20" FontSize="13" Checked="CheckBox" x:Name="Check">
+                    <CheckBox Margin="0,30,0,20" FontSize="13" x:Name="Check">
                         <TextBlock>
                             <Run Foreground="#b6b6b6" >By signing up I agree with</Run>
                             <Run Foreground="#07BF96">terms and conditions</Run>
