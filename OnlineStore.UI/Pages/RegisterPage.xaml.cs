@@ -24,7 +24,6 @@ namespace OnlineStore.UI.Pages
     public partial class RegisterPage : Window
     {
         private readonly IUserService _userService;
-        private Boolean _isChecked = false;
 
         public RegisterPage()
         {
@@ -38,7 +37,7 @@ namespace OnlineStore.UI.Pages
 
             if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
                 firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
-                phonetxt.Text is not null && passwordtxt.Password is not null && _isChecked is true)
+                phonetxt.Text is not null && passwordtxt.Password is not null && Check.IsChecked is true)
             {
                 UserCreationDTO userCreationDTO = new UserCreationDTO()
                 {
@@ -73,10 +72,5 @@ namespace OnlineStore.UI.Pages
             this.Close();
         }
 
-        private void CheckBox(object sender, RoutedEventArgs e)
-        {
-            if(Check.IsChecked is true)
-                _isChecked = true;
-        }
     }
 }
