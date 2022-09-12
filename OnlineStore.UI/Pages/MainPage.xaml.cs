@@ -22,6 +22,8 @@ namespace OnlineStore.UI.Pages
         public MainPage()
         {
             InitializeComponent();
+
+            ButtonsStackPanelUI.Children.Add(new RadioButton() { Content = "New birnarsa" });
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +45,7 @@ namespace OnlineStore.UI.Pages
 
         private void rdHome_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("HomePage.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/HomePage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdSounds_Click(object sender, RoutedEventArgs e)
