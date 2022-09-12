@@ -135,20 +135,20 @@ namespace OnlineStore.Service.Services
             return response;
         }
 
-        public async Task<BaseResponse<bool>> LogInAsync(string username, string password)
+        public async Task<BaseResponse<User>> LogInAsync(string username, string password)
         {
-            var response = new BaseResponse<bool>();
+            var response = new BaseResponse<User>();
 
             var result = await _userRepository.GetAsync(p => p.Username == username);
 
             if(result is not null && result.Password == password.GetHash())
             {
-                response.Data = true;
+                response.Data = result;
                 
                 return response;
             }
 
-            response.Data = false;
+            response.Data = null;
 
             return response;
         }
