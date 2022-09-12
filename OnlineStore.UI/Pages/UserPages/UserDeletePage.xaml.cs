@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineStore.Service.Interfaces;
+using OnlineStore.Service.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,18 +21,31 @@ namespace OnlineStore.UI.Pages.UserPages
     /// </summary>
     public partial class UserDeletePage : Window
     {
-        public UserDeletePage()
+        private readonly long _id;
+
+        private readonly IUserService userService;
+
+        public UserDeletePage(long id)
         {
+            userService = new UserService();
+
+            _id = id;
+
             InitializeComponent();
         }
 
-        private void UserDeletedBtn(object sender, RoutedEventArgs e)
+        private async void UserDeletedBtn(object sender, RoutedEventArgs e)
         {
-            RegisterPage registerPage = new RegisterPage();
+            var result = await userService.DeleteAsync(p => p.Id == _id);
 
-            registerPage.Show();
+            if (result.Data)
+            {
+                RegisterPage registerPage = new RegisterPage();
 
-            this.Close();
+                registerPage.Show();
+
+                this.Close();
+            }
         }
     }
 }
