@@ -1,0 +1,20 @@
+﻿<Window x:Class="OnlineStore.UI.Pages.UserPages.UserDeletePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStore.UI.Pages.UserPages"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="UserDeletePage" Height="150" Width="300">
+    <Grid>
+        <StackPanel>
+            <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+                <Label Content="Are you sure delete" Foreground="Black" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Border>
+            <Button Margin="0 20 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="50" Width="100" materialDesign:ButtonAssist.CornerRadius="10"
+                        FontSize="18" Content="Delete" Click="UserDeletedBtn" Background="#17212B"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -53,7 +53,7 @@
                         </ToggleButton.Triggers>
                     </ToggleButton>
 
-                    <StackPanel Grid.Row="3">
+                    <StackPanel Grid.Row="3" x:Name="ButtonsStackPanelUI">
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
                         <RadioButton x:Name="rdSounds" Content="Sounds" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdSounds_Click"/>
                         <RadioButton x:Name="rdNotes" Content="Notes" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdNotes_Click"/>
@@ -61,15 +61,17 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
+                        
                         <Ellipse Width="40" Height="40" Margin="10 0 0 0">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="C:\Users\MisterX\source\repos\OnlineStore-Exam\OnlineStore.UI\Assets\Avatars\images.jpg"/>
+                                <ImageBrush ImageSource="..\Assets\Avatars\images.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <StackPanel Orientation="Vertical" Margin="8 0 0 0">
-                            <Label Content="Scarlett Gwen" Foreground="{DynamicResource TextPrimaryColor}" FontSize="14" FontWeight="SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left"/>
-                            <Label Content="scarlettgwen@gmail.com" Foreground="{DynamicResource PrimaryGrayColor}" FontSize="11" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="0 -10 0 0"/>
-                        </StackPanel>
+                        <Button Margin="10 0 0 0" Click="UserBtn" BorderBrush="Transparent" Background="Transparent">
+                            <StackPanel Orientation="Vertical">
+                                <Label x:Name="FirstnameCtn" Content="Temur" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="16" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="-10 -10 0 0"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Border>

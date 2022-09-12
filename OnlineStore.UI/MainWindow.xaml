@@ -22,16 +22,16 @@
                              PlacementMode="BottomAndAlignRightEdges"
                              StaysOpen="False" Height="25">
                     <StackPanel>
-                        <Button ToolTip="Do you have trouble with it?" Margin="0 8 0 0" 
-                                Content="Help me"/>
-                        <Button x:Name="btn_exit" ToolTip="Close Application"
+                        <!--<Button ToolTip="Do you have trouble with it?" Margin="0 8 0 0" 
+                                Content="Help me"/>-->
+                        <Button x:Name="btn_exit" ToolTip="Close"
                                 Content="Exit Application" Click="exitApp"/>
 
                     </StackPanel>
                 </md:PopupBox>
 
                 <Image Margin="0 0 0 5" Height="120"
-                       Source="C:\Users\MisterX\source\repos\StoreProject\StoreProject.UI\Images\logos.jpg"/>
+                       Source="Assets\Avatars\logos.jpg" Visibility="Visible"/>
 
                 <TextBlock FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"
                            Text="Log in"/>

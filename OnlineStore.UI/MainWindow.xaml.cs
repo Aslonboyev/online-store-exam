@@ -45,14 +45,15 @@ namespace OnlineStore.UI
 
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
-            MainPage mainPage = new MainPage();
-
+            
             if (Usernametxt.Text is not null || Passwordtxt.Password is not null)
             {
                 var result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
 
-                if (result.Data)
+                if (result.Data is not null)
                 {
+                    MainPage mainPage = new MainPage(result.Data.Id, result.Data.FirstName);
+
                     mainPage.Show();
                     this.Close();
                 }

@@ -172,10 +172,10 @@
 
                     <StackPanel>
 
-                        <Button
+                        <!--<Button
                             Margin="0,8,0,0"
                             Content="Help Me"
-                            ToolTip="Having Trouble Logging ?" />
+                            ToolTip="Having Trouble Logging ?" />-->
 
                         <Button
                             x:Name="btn_exit"
