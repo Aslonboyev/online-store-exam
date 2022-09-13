@@ -13,11 +13,6 @@ using OnlineStore.Service.DTOs.LocationDTOs;
 using OnlineStore.Service.DTOs.OrderDTOs;
 using OnlineStore.Service.DTOs.ProductDTOs;
 using OnlineStore.Service.DTOs.UserDTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Mappers
 {

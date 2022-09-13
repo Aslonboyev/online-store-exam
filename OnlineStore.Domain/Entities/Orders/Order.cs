@@ -1,5 +1,4 @@
-﻿using OnlineStore.Domain.Entities.Orders;
-using OnlineStore.Domain.Common;
+﻿using OnlineStore.Domain.Common;
 using OnlineStore.Domain.Entities.Locations;
 using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Domain.Enums;
@@ -17,7 +16,7 @@ namespace OnlineStore.Domain.Entities.Orders
 
         [Required]
         public decimal Total { get; set; }
-        
+
         [Required]
         public long UserId { get; set; }
         public User User { get; set; }

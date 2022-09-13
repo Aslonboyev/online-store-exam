@@ -1,7 +1,7 @@
-﻿using OnlineStore.Domain.Enums;
-using OnlineStore.Domain.Common;
+﻿using OnlineStore.Domain.Common;
 using OnlineStore.Domain.Entities.Categories;
 using OnlineStore.Domain.Entities.Discounts;
+using OnlineStore.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace OnlineStore.Domain.Entities.Products

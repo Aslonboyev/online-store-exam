@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlineStore.Service.DTOs.OrderDTOs
+﻿namespace OnlineStore.Service.DTOs.OrderDTOs
 {
     public class OrderDetailCreationDTO
     {
