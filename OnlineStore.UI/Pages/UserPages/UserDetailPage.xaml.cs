@@ -26,6 +26,8 @@ namespace OnlineStore.UI.Pages.UserPages
 
         public UserDetailPage(User user)
         {
+            InitializeComponent();
+            
             _user = user;
 
             FirstnameCtn.Content = _user.FirstName;
@@ -34,7 +36,6 @@ namespace OnlineStore.UI.Pages.UserPages
             PhoneCtn.Content = _user.Phone;
             UsernameCtn.Content = _user.Username;
 
-            InitializeComponent();
         }
 
         private void BackToStore(object sender, RoutedEventArgs e)
@@ -53,7 +54,11 @@ namespace OnlineStore.UI.Pages.UserPages
 
         private void UserDeleteBtn(object sender, RoutedEventArgs e)
         {
+            UserDeletePage userDeletePage = new UserDeletePage(_user.Id);
 
+            userDeletePage.Show();
+
+            this.Close();
         }
 
         private void UserUpdateBtn(object sender, RoutedEventArgs e)

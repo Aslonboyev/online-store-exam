@@ -9,6 +9,20 @@
       Title="HomePage">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem Header="SDIVJNCS">
+                    <MenuItem>
+                        FRYFTYYF
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem/>
+            </Menu>
+            <Label Grid.Row="1" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
     </Border>
 </Page>

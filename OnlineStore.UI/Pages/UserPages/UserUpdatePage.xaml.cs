@@ -27,11 +27,11 @@ namespace OnlineStore.UI.Pages.UserPages
 
         public UserUpdatePage(long id)
         {
+            InitializeComponent();
+            
             _id = id;
 
             _userService = new UserService();
-
-            InitializeComponent();
         }
 
         private async void UserUpdatedBtn(object sender, RoutedEventArgs e)

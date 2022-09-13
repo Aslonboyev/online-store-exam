@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel>
             <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-                <Label Content="Are you sure delete" Foreground="Black" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="Are you sure delete?" Foreground="Black" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Border>
             <Button Margin="0 20 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="50" Width="100" materialDesign:ButtonAssist.CornerRadius="10"

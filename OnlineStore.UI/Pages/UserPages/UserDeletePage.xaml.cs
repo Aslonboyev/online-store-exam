@@ -27,11 +27,11 @@ namespace OnlineStore.UI.Pages.UserPages
 
         public UserDeletePage(long id)
         {
+            InitializeComponent();
+
             userService = new UserService();
 
             _id = id;
-
-            InitializeComponent();
         }
 
         private async void UserDeletedBtn(object sender, RoutedEventArgs e)

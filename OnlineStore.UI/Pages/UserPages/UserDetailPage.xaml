@@ -6,10 +6,10 @@
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnlineStore.UI.Pages.UserPages"
         mc:Ignorable="d" 
-        d:DesignHeight="650" d:DesignWidth="450"
-      Title="UserDetail">
+        Height="650" Width="450"
+        WindowStyle="None">
 
-    <Border CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
+    <Border  CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <StackPanel>
             <md:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
                              PlacementMode="BottomAndAlignRightEdges"
