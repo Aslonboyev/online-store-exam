@@ -58,7 +58,7 @@
                 </ScrollViewer>
             </Grid>
 
-            <Label Grid.Row="2" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Grid.Row="2" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,126,0,0"/>
         </Grid>
     </Border>
 </Page>
