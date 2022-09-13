@@ -16,5 +16,10 @@ namespace OnlineStore.UI.Pages
         {
             CartName.Text = "";
         }
+
+        private void CartBtn(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

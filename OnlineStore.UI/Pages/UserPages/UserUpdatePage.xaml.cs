@@ -2,13 +2,14 @@
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace OnlineStore.UI.Pages.UserPages
 {
     /// <summary>
     /// Interaction logic for UserUpdatePage.xaml
     /// </summary>
-    public partial class UserUpdatePage : Window
+    public partial class UserUpdatePage : Page
     {
         private readonly IUserService _userService;
         private readonly long _id;
@@ -45,8 +46,6 @@ namespace OnlineStore.UI.Pages.UserPages
                     MainPage mainPage = new MainPage(_id, userCreationDTO.FirstName);
 
                     mainPage.Show();
-
-                    this.Close();
                 }
             }
 
@@ -59,7 +58,6 @@ namespace OnlineStore.UI.Pages.UserPages
 
         private void exitApp(object sender, RoutedEventArgs e)
         {
-            this.Close();
         }
     }
 }

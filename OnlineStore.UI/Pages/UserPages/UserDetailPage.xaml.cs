@@ -1,12 +1,14 @@
 ﻿using OnlineStore.Domain.Entities.Users;
+using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace OnlineStore.UI.Pages.UserPages
 {
     /// <summary>
     /// Interaction logic for UserDetailPage.xaml
     /// </summary>
-    public partial class UserDetailPage : Window
+    public partial class UserDetailPage : Page
     {
         private User _user;
 
@@ -29,13 +31,11 @@ namespace OnlineStore.UI.Pages.UserPages
             MainPage mainPage = new MainPage(_user.Id, _user.FirstName);
 
             mainPage.Show();
-
-            this.Close();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
 
         private void UserDeleteBtn(object sender, RoutedEventArgs e)
@@ -43,17 +43,13 @@ namespace OnlineStore.UI.Pages.UserPages
             UserDeletePage userDeletePage = new UserDeletePage(_user.Id);
 
             userDeletePage.Show();
-
-            this.Close();
         }
 
         private void UserUpdateBtn(object sender, RoutedEventArgs e)
         {
             UserUpdatePage userUpdatePage = new UserUpdatePage(_user.Id);
 
-            userUpdatePage.Show();
-
-            this.Close();
+            //PagesNavigation.Navigate(new System.Uri("Pages/UserUpdatePage.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

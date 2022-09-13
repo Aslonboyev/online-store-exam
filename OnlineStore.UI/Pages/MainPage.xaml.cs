@@ -50,9 +50,9 @@ namespace OnlineStore.UI.Pages
             PagesNavigation.Navigate(new System.Uri("Pages/HomePage.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void rdSounds_Click(object sender, RoutedEventArgs e)
+        private void rdContact_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/SoundsPage.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/ContactPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdNotes_Click(object sender, RoutedEventArgs e)
@@ -71,9 +71,15 @@ namespace OnlineStore.UI.Pages
 
             UserDetailPage userDetail = new UserDetailPage(result.Data);
 
-            userDetail.Show();
+            // userDetail.Show();
+            PagesNavigation.Navigate(new System.Uri("Pages/UserPages/UserDetailPage.xaml", UriKind.RelativeOrAbsolute));
 
-            this.Close();
+            //this.Close();
+        }
+
+        private void rdSounds_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
