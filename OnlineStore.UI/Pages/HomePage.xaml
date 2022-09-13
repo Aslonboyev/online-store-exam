@@ -2,6 +2,7 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OnlineStore.UI.Pages"
       mc:Ignorable="d" 
@@ -12,17 +13,46 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="7*"/>
+                <RowDefinition/>
+                <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
-            <Menu>
-                <MenuItem Header="SDIVJNCS">
-                    <MenuItem>
-                        FRYFTYYF
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem/>
-            </Menu>
-            <Label Grid.Row="1" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            
+            <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel  Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="{DynamicResource PrimaryBlueColor}" Width="30" Height="30" HorizontalAlignment="Left"/>
+                    <Label Content="Temur's Shop" Foreground="#242F3D" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
+                    </StackPanel>
+                    
+                    <Grid Grid.Column="1">
+                        <TextBox Name="SearchBar" TextChanged="SearchBar_TextChanged" Margin="8" Background="#242F3D"
+                                 md:TextFieldAssist.TextFieldCornerRadius="5" md:HintAssist.Hint="Search" BorderThickness="0"
+                                 Foreground="Snow" Padding="8" md:TextFieldAssist.UnderlineBrush="Transparent"/>
+                    </Grid>
+                    <Button Grid.Column="2" x:Name="CartnBtnName" Width="130" Height="30"
+                                            md:ButtonAssist.CornerRadius="5" 
+                                            Click="CartBtn" Background="#242F3D" BorderThickness="0"
+                                            HorizontalAlignment="Left" Margin="60 0 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <md:PackIcon Width="30" Height="25"
+                                                        Kind="Cart"
+                                                        Foreground="White"/>
+                            <TextBlock x:Name="CartName" VerticalAlignment="Center" Text="Cart (0)"
+                                                        FontSize="14" Foreground="White"
+                                                         FontWeight="SemiBold"
+                                                        />
+
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+            
+            <Label Grid.Row="2" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
     </Border>
 </Page>

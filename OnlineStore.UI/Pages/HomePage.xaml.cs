@@ -24,5 +24,10 @@ namespace OnlineStore.UI.Pages
         {
             InitializeComponent();
         }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CartName.Text = "";
+        }
     }
 }
