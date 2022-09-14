@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using OnlineStore.Data.DbContexts;
@@ -11,9 +12,10 @@ using OnlineStore.Data.DbContexts;
 namespace OnlineStore.Data.Migrations
 {
     [DbContext(typeof(OnlineStoreDbContext))]
-    partial class OnlineStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220914114957_4")]
+    partial class _4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -261,6 +263,7 @@ namespace OnlineStore.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<long?>("DiscountId")
+                        .IsRequired()
                         .HasColumnType("bigint");
 
                     b.Property<string>("ImagePath")
@@ -391,7 +394,9 @@ namespace OnlineStore.Data.Migrations
 
                     b.HasOne("OnlineStore.Domain.Entities.Discounts.Discount", "Discount")
                         .WithMany()
-                        .HasForeignKey("DiscountId");
+                        .HasForeignKey("DiscountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
 

@@ -116,9 +116,9 @@ namespace OnlineStore.UI.Pages
                     productItem.PriceCtn.Content = product.Price;
                     productItem.ProductDescriptionCtn.Content = product.Description;
                     productItem.ProductNameCtn.Content = product.Name;
-                    productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
+                    //productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
 
-                    CategoryList.Items.Add(productItem);
+                    ProductList.Items.Add(productItem);
                 });
             }
         }

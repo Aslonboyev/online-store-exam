@@ -50,23 +50,26 @@
 
                     </StackPanel>
                 </Button>
-            </Grid>
-            <Grid Grid.Row="1">
-                
-                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
-                    <ItemsControl Name="CategoryList">
+            </Grid >
 
-                    </ItemsControl>
+            <Grid Grid.Row="1">
+                <ScrollViewer  ScrollViewer.HorizontalScrollBarVisibility="Visible"  
+                              Height="60" Margin="0,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Orientation="Horizontal">
+                        <ItemsControl Name="CategoryList">
+
+                        </ItemsControl>
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
-        
-        <Grid Grid.Row="2">
+            <Grid Grid.Row="2">
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <DockPanel>
+                        <ItemsControl Name="ProductList">
 
-            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="5">
-                <ItemsControl Name="ProductList">
-
-                </ItemsControl>
-            </ScrollViewer>
+                        </ItemsControl>
+                    </DockPanel>
+                </ScrollViewer>
             </Grid>
         </Grid>
 

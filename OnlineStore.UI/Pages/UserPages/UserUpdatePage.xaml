@@ -6,36 +6,15 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnlineStore.UI.Pages.UserPages"
         mc:Ignorable="d"
-        Title="UserUpdatePage" Width="500" Height="650"
+        Title="UserUpdatePage" Width="800" Height="450"
         Background="White"
         FontFamily="{DynamicResource MaterialDesignFont}">
-    <Border CornerRadius="15">
-        <Grid>
-            <materialDesign:PopupBox
-                    Height="25"
-                    Margin="0 0 15 580"
-                    HorizontalAlignment="Right"
-                    PlacementMode="BottomAndAlignRightEdges"
-                    StaysOpen="False">
+    <Grid>
+        <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
+            <ItemsControl Name="CategoryList">
+                <StackPanel Margin="75,0" VerticalAlignment="Center">
 
-                <StackPanel>
-
-                    <!--<Button
-                            Margin="0,8,0,0"
-                            Content="Help Me"
-                            ToolTip="Having Trouble Logging ?" />-->
-
-                    <Button
-                            x:Name="btn_exit"
-                            Click="exitApp"
-                            Content="Exit"
-                            ToolTip="Close Application" />
-
-                </StackPanel>
-            </materialDesign:PopupBox>
-            <StackPanel Margin="75,0" VerticalAlignment="Center">
-
-                <TextBox
+                    <TextBox
                         Margin="0,27"
                         FontSize="16"
                         x:Name="firstnametxt"
@@ -45,7 +24,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                <TextBox
+                    <TextBox
                         FontSize="16"
                         x:Name="lastnametxt"
                         materialDesign:HintAssist.FloatingOffset="0,-20"
@@ -54,7 +33,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                <TextBox
+                    <TextBox
                         Margin="0,27"
                         FontSize="16"
                         x:Name="emailtxt"
@@ -64,7 +43,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                <TextBox
+                    <TextBox
                         FontSize="16"
                         x:Name="usernametxt"
                         materialDesign:HintAssist.FloatingOffset="0,-20"
@@ -73,7 +52,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                <TextBox
+                    <TextBox
                         FontSize="16"
                         Margin="0, 20"
                         x:Name="phonetxt"
@@ -83,7 +62,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
 
-                <PasswordBox
+                    <PasswordBox
                         Margin="0"
                         FontSize="16"
                         x:Name="passwordtxt"
@@ -93,7 +72,7 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
-                <PasswordBox
+                    <PasswordBox
                         FontSize="16"
                         Margin="0, 16"
                         x:Name="repeatPasswordtxt"
@@ -103,11 +82,11 @@
                         BorderThickness="0,0,0,1.5"
                         Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
-                <Button Margin="0 20 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                    <Button Margin="0 20 0 0" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="250" materialDesign:ButtonAssist.CornerRadius="10"
                         FontSize="18" Content="Update" Click="UserUpdatedBtn"/>
-
-            </StackPanel>
-        </Grid>
-    </Border>
+                </StackPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
 </Page>

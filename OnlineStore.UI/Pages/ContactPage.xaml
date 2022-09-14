@@ -15,7 +15,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Image Source="..\Assets\Avatars\Call_center.jpg"/>
+            <Image Visibility="Visible" Source="..\Assets\Avatars\Call_center.jpg"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
