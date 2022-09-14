@@ -24,20 +24,21 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel  Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <!--<StackPanel  Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Path Data="{DynamicResource logo}" Margin="16 0 0 0" Stretch="Fill" Fill="{DynamicResource PrimaryBlueColor}" Width="30" Height="30" HorizontalAlignment="Left"/>
                     <Label Content="Temur's Shop" Foreground="#242F3D" FontWeight="Bold" FontSize="17" VerticalAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="14 0 0 0"/>
-                </StackPanel>
+                </StackPanel>-->
 
                 <Grid Grid.Column="1">
-                    <TextBox Name="SearchBar" TextChanged="SearchBar_TextChanged" Margin="8" Background="#242F3D"
+                    <TextBox Name="SearchBar" TextChanged="SearchBar_TextChanged" Margin="8" Height="30" Background="#242F3D"
                                  md:TextFieldAssist.TextFieldCornerRadius="5" md:HintAssist.Hint="Search" BorderThickness="0"
-                                 Foreground="Snow" Padding="8" md:TextFieldAssist.UnderlineBrush="Transparent"/>
+                             PreviewTextInput="SearchBar_PreviewTextInput"
+                                 Foreground="Snow" Padding="7" md:TextFieldAssist.UnderlineBrush="Transparent"/>
                 </Grid>
                 <Button Grid.Column="2" x:Name="CartnBtnName" Width="130" Height="30"
                                             md:ButtonAssist.CornerRadius="5" 
                                             Click="CartBtn" Background="#242F3D" BorderThickness="0"
-                                            HorizontalAlignment="Left" Margin="60 0 0 0">
+                                            HorizontalAlignment="Left" Margin="60 4 0 0">
                     <StackPanel Orientation="Horizontal">
                         <md:PackIcon Width="30" Height="25"
                                                         Kind="Cart"
@@ -51,6 +52,7 @@
                 </Button>
             </Grid>
             <Grid Grid.Row="1">
+                
                 <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
                     <ItemsControl Name="CategoryList">
 

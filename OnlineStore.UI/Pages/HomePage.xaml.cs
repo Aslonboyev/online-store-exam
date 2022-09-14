@@ -21,5 +21,15 @@ namespace OnlineStore.UI.Pages
         {
 
         }
+
+        private void SearchBar_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (textBox.Text.Length > 3)
+            {
+
+            }
+        }
     }
 }

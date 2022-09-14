@@ -15,9 +15,9 @@ namespace OnlineStore.Service.DTOs.LocationDTOs
         public Region Region { get; set; }
 
         [Required]
-        public DateTime WorkStartedAt { get; set; }
+        public TimeOnly WorkStartedAt { get; set; }
 
         [Required]
-        public DateTime WorkEndedAt { get; set; }
+        public TimeOnly WorkEndedAt { get; set; }
     }
 }

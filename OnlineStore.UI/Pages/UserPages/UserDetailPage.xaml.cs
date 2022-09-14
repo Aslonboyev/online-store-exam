@@ -12,11 +12,14 @@ namespace OnlineStore.UI.Pages.UserPages
     {
         private User _user;
 
-        public UserDetailPage(User user)
+        public UserDetailPage()
         {
             InitializeComponent();
+        }
 
-            _user = user;
+        private void OnLoaded(User user)
+        {
+            _user = MainPage.UserDetailData;
 
             FirstnameCtn.Content = _user.FirstName;
             LastnameCtn.Content = _user.LastName;
@@ -51,5 +54,6 @@ namespace OnlineStore.UI.Pages.UserPages
 
             //PagesNavigation.Navigate(new System.Uri("Pages/UserUpdatePage.xaml", UriKind.RelativeOrAbsolute));
         }
+
     }
 }
