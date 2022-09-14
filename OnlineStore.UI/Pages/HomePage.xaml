@@ -7,10 +7,10 @@
       xmlns:local="clr-namespace:OnlineStore.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage">
+      Title="HomePage" Loaded="Page_Loaded">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Grid>
+        <Grid Margin="0,6,0,-6">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="1.1*"/>
@@ -59,8 +59,16 @@
                     </ItemsControl>
                 </ScrollViewer>
             </Grid>
+        
+        <Grid Grid.Row="2">
 
-            <Label Grid.Row="2" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,126,0,0"/>
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="5">
+                <ItemsControl Name="ProductList">
+
+                </ItemsControl>
+            </ScrollViewer>
+            </Grid>
         </Grid>
+
     </Border>
 </Page>

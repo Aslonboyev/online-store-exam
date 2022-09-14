@@ -8,6 +8,6 @@
              mc:Ignorable="d" 
              d:MinHeight="50" d:MinWidth="80">
     <Grid>
-        <Button Background="#242F3D" Foreground="White" x:Name="CategoryName" Content="consuption" FontSize="16"/>
+        <Button Background="#242F3D" Foreground="White" x:Name="CategoryNameCtn" Content="consuption" FontSize="16"/>
     </Grid>
 </UserControl>

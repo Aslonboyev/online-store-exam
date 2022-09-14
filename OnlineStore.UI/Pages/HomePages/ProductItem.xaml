@@ -11,7 +11,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="..\..\Assets\Avatars\images.jpg"/>
+        <Image Grid.Row="0" Source="..\..\Assets\Avatars\images.jpg" x:Name="ProductImage"/>
         <StackPanel Grid.Row="1" Margin="5">
             <Label x:Name="ProductNameCtn" Content="Cola" Foreground="Black" FontWeight="Bold"
                        FontSize="12" VerticalAlignment="Top"/>
