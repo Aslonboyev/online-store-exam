@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="OnlineStore.UI.Pages.HomePages.ProductItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnlineStore.UI.Pages.HomePages"
+             mc:Ignorable="d" 
+             Height="200" Width="110" Background="White">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="..\..\Assets\Avatars\images.jpg"/>
+        <StackPanel Grid.Row="1" Margin="5">
+            <Label x:Name="ProductNameCtn" Content="Cola" Foreground="Black" FontWeight="Bold"
+                       FontSize="12" VerticalAlignment="Top"/>
+            <Label x:Name="ProductDescriptionCtn" Content="kvjdmcskcmds" FontSize="7"/>
+            <Label x:Name="PriceCtn" Content="13000" Margin="0 35 50 0" FontSize="10" FontWeight="Bold" Foreground="Black"/>
+            <Button x:Name="ChooseBtn" Content="Choose" Background="#242F3D" BorderBrush="White" BorderThickness="0" 
+                        FontSize="5.4" Margin="43 -20 0 0" Height="15" Width="50"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

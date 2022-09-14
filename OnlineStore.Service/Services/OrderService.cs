@@ -7,12 +7,7 @@ using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.OrderDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
@@ -124,4 +119,4 @@ namespace OnlineStore.Service.Services
         }
     }
 }
-    
+

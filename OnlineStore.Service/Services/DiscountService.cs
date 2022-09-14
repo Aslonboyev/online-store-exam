@@ -7,12 +7,7 @@ using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.DiscountDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
@@ -30,7 +25,7 @@ namespace OnlineStore.Service.Services
                 cfg.AddProfile<MappingProfile>();
             });
 
-            _mapper = config.CreateMapper();    
+            _mapper = config.CreateMapper();
         }
 
         public async Task<BaseResponse<Discount>> CreateAsync(DiscountCreationDTO entity)

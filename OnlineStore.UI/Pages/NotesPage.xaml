@@ -6,9 +6,13 @@
       xmlns:local="clr-namespace:OnlineStore.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="NotesPage">
+      Title="NotesPage" Background="Transparent">
 
-    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Notes" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Border>
+    <Grid Background="White">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
+            <ItemsControl Name="LocationList">
+
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
 </Page>

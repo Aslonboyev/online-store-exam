@@ -1,37 +1,26 @@
 ﻿using OnlineStore.Service.DTOs.UserDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OnlineStore.UI.Pages.UserPages
 {
     /// <summary>
     /// Interaction logic for UserUpdatePage.xaml
     /// </summary>
-    public partial class UserUpdatePage : Window
+    public partial class UserUpdatePage : Page
     {
         private readonly IUserService _userService;
         private readonly long _id;
 
         public UserUpdatePage(long id)
         {
+            InitializeComponent();
+
             _id = id;
 
             _userService = new UserService();
-
-            InitializeComponent();
         }
 
         private async void UserUpdatedBtn(object sender, RoutedEventArgs e)
@@ -57,8 +46,6 @@ namespace OnlineStore.UI.Pages.UserPages
                     MainPage mainPage = new MainPage(_id, userCreationDTO.FirstName);
 
                     mainPage.Show();
-                    
-                    this.Close();
                 }
             }
 
@@ -71,7 +58,6 @@ namespace OnlineStore.UI.Pages.UserPages
 
         private void exitApp(object sender, RoutedEventArgs e)
         {
-            this.Close();
         }
     }
 }

@@ -2,12 +2,7 @@
 using OnlineStore.Data.DbContexts;
 using OnlineStore.Data.IRepositories.IBaseRepositories;
 using OnlineStore.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Data.Repositories.BaseRepositories
 {
@@ -20,9 +15,9 @@ namespace OnlineStore.Data.Repositories.BaseRepositories
             _dbContext = new OnlineStoreDbContext();
             _dbSet = _dbContext.Set<T>();
         }
-        
+
         public async Task<T> CreateAsync(T entity)
-            =>(await _dbSet.AddAsync(entity)).Entity;
+            => (await _dbSet.AddAsync(entity)).Entity;
 
         public Task<bool> DeleteAsync(T entity)
         {
@@ -35,7 +30,7 @@ namespace OnlineStore.Data.Repositories.BaseRepositories
 
         public Task<T> GetAsync(Expression<Func<T, bool>> expression)
             => _dbSet.FirstOrDefaultAsync(expression);
-        
+
         public T Update(T entity)
             => _dbSet.Update(entity).Entity;
         public Task SaveChangesAsync()

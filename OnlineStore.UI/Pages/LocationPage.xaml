@@ -1,4 +1,4 @@
-﻿<Page x:Class="OnlineStore.UI.Pages.SoundsPage"
+﻿<Page x:Class="OnlineStore.UI.Pages.LocationPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,9 +6,13 @@
       xmlns:local="clr-namespace:OnlineStore.UI.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SoundsPage">
+      Title="LocationPage">
+    
+    <Grid Background="White">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
+            <ItemsControl Name="LocationList">
 
-    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Label Content="Sounds" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-    </Border>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
 </Page>

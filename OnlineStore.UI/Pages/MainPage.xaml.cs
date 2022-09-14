@@ -1,19 +1,9 @@
-﻿using OnlineStore.Service.Interfaces;
+﻿using OnlineStore.Domain.Entities.Users;
+using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using OnlineStore.UI.Pages.UserPages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OnlineStore.UI.Pages
 {
@@ -23,6 +13,7 @@ namespace OnlineStore.UI.Pages
     public partial class MainPage : Window
     {
         private long _id;
+        public static User UserDetailData;
         private readonly IUserService _userService;
 
         public MainPage(long id, string firstname)
@@ -61,14 +52,14 @@ namespace OnlineStore.UI.Pages
             PagesNavigation.Navigate(new System.Uri("Pages/HomePage.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void rdSounds_Click(object sender, RoutedEventArgs e)
+        private void rdContacts_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/SoundsPage.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/ContactPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void rdNotes_Click(object sender, RoutedEventArgs e)
+        private void rdLocation_Click(object sender, RoutedEventArgs e)
         {
-            PagesNavigation.Navigate(new System.Uri("Pages/NotesPage.xaml", UriKind.RelativeOrAbsolute));
+            PagesNavigation.Navigate(new System.Uri("Pages/LocationPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdPayment_Click(object sender, RoutedEventArgs e)
@@ -79,12 +70,23 @@ namespace OnlineStore.UI.Pages
         private async void UserBtn(object sender, RoutedEventArgs e)
         {
             var result = await _userService.GetAsync(p => p.Id == _id);
+            UserDetailData = result.Data;
 
-            UserDetailPage userDetail = new UserDetailPage(result.Data);
+            // userDetail.Show();
+            PagesNavigation.Navigate(new System.Uri("Pages/UserPages/UserDetailPage.xaml",
+                UriKind.RelativeOrAbsolute), result.Data);
 
-            userDetail.Show();
+            //this.Close();
+        }
 
-            this.Close();
+        private void rdSounds_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rdContacts_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

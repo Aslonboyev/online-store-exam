@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
 
 namespace OnlineStore.UI.Pages
 {
@@ -23,6 +10,26 @@ namespace OnlineStore.UI.Pages
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CartName.Text = "";
+        }
+
+        private void CartBtn(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchBar_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            if (textBox.Text.Length > 3)
+            {
+
+            }
         }
     }
 }

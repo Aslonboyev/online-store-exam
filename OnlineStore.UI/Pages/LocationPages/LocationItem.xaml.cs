@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages
+namespace OnlineStore.UI.Pages.LocationPages
 {
     /// <summary>
-    /// Interaction logic for SoundsPage.xaml
+    /// Interaction logic for LocationItem.xaml
     /// </summary>
-    public partial class SoundsPage : Page
+    public partial class LocationItem : UserControl
     {
-        public SoundsPage()
+        public LocationItem()
         {
             InitializeComponent();
         }

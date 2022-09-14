@@ -1,12 +1,7 @@
 ﻿using OnlineStore.Domain.Common.Responses;
 using OnlineStore.Domain.Entities.Locations;
 using OnlineStore.Service.DTOs.LocationDTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Interfaces
 {

@@ -1,32 +1,25 @@
 ﻿using OnlineStore.Domain.Entities.Users;
-using OnlineStore.Service.Interfaces;
-using OnlineStore.Service.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OnlineStore.UI.Pages.UserPages
 {
     /// <summary>
     /// Interaction logic for UserDetailPage.xaml
     /// </summary>
-    public partial class UserDetailPage : Window
+    public partial class UserDetailPage : Page
     {
         private User _user;
 
-        public UserDetailPage(User user)
+        public UserDetailPage()
         {
-            _user = user;
+            InitializeComponent();
+        }
+
+        private void OnLoaded(User user)
+        {
+            _user = MainPage.UserDetailData;
 
             FirstnameCtn.Content = _user.FirstName;
             LastnameCtn.Content = _user.LastName;
@@ -34,7 +27,6 @@ namespace OnlineStore.UI.Pages.UserPages
             PhoneCtn.Content = _user.Phone;
             UsernameCtn.Content = _user.Username;
 
-            InitializeComponent();
         }
 
         private void BackToStore(object sender, RoutedEventArgs e)
@@ -42,27 +34,26 @@ namespace OnlineStore.UI.Pages.UserPages
             MainPage mainPage = new MainPage(_user.Id, _user.FirstName);
 
             mainPage.Show();
-
-            this.Close();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
 
         private void UserDeleteBtn(object sender, RoutedEventArgs e)
         {
+            UserDeletePage userDeletePage = new UserDeletePage(_user.Id);
 
+            userDeletePage.Show();
         }
 
         private void UserUpdateBtn(object sender, RoutedEventArgs e)
         {
             UserUpdatePage userUpdatePage = new UserUpdatePage(_user.Id);
 
-            userUpdatePage.Show();
-
-            this.Close();
+            //PagesNavigation.Navigate(new System.Uri("Pages/UserUpdatePage.xaml", UriKind.RelativeOrAbsolute));
         }
+
     }
 }

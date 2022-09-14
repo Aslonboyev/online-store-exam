@@ -7,12 +7,7 @@ using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.LocationDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
@@ -38,14 +33,14 @@ namespace OnlineStore.Service.Services
         {
             var response = new BaseResponse<Location>();
 
-            if(await _locationRepository.GetAsync(p => p.Region == entity.Region || p.Name == entity.Name) is not null)
+            if (await _locationRepository.GetAsync(p => p.Region == entity.Region || p.Name == entity.Name) is not null)
             {
                 response.Error = new ErrorResponse(400, "Region already exists");
                 return response;
             }
 
             var location = _mapper.Map<Location>(entity);
-            
+
             response.Data = await _locationRepository.CreateAsync(location);
 
             return response;
@@ -54,7 +49,7 @@ namespace OnlineStore.Service.Services
         public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<Location, bool>> expression)
         {
             var response = new BaseResponse<bool>();
-            
+
             var entity = await _locationRepository.GetAsync(expression);
 
             if (entity is null || entity.ItemState == ItemState.Deleted)
@@ -100,7 +95,7 @@ namespace OnlineStore.Service.Services
             return response;
         }
 
-        public async Task<BaseResponse<Location>> UpdateAsync( long id, LocationCreationDTO entity)
+        public async Task<BaseResponse<Location>> UpdateAsync(long id, LocationCreationDTO entity)
         {
 
             var response = new BaseResponse<Location>();

@@ -1,20 +1,7 @@
-﻿using OnlineStore.Domain.Entities.Users;
-using OnlineStore.Service.DTOs.UserDTOs;
+﻿using OnlineStore.Service.DTOs.UserDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OnlineStore.UI.Pages
 {
@@ -33,7 +20,7 @@ namespace OnlineStore.UI.Pages
         }
         private async void SignUpBtn(object sender, RoutedEventArgs e)
         {
-             MainWindow mainWindow = new MainWindow();
+            MainWindow mainWindow = new MainWindow();
 
             if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
                 firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&

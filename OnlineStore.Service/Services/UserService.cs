@@ -2,19 +2,13 @@
 using OnlineStore.Data.IRepositories;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Domain.Common.Responses;
-using OnlineStore.Domain.Entities.Locations;
 using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Domain.Enums;
 using OnlineStore.Service.DTOs.UserDTOs;
 using OnlineStore.Service.Extentions;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Service.Services
 {
@@ -40,8 +34,8 @@ namespace OnlineStore.Service.Services
 
             var response = new BaseResponse<User>();
 
-            if (await _userRepository.GetAsync(p => p.Email == entity.Email || 
-                                               p.Username == entity.Username || 
+            if (await _userRepository.GetAsync(p => p.Email == entity.Email ||
+                                               p.Username == entity.Username ||
                                                p.Phone == entity.Phone) is not null)
             {
                 response.Error = new ErrorResponse(400, "Client is already exists");
@@ -141,10 +135,10 @@ namespace OnlineStore.Service.Services
 
             var result = await _userRepository.GetAsync(p => p.Username == username);
 
-            if(result is not null && result.Password == password.GetHash())
+            if (result is not null && result.Password == password.GetHash())
             {
                 response.Data = result;
-                
+
                 return response;
             }
 
