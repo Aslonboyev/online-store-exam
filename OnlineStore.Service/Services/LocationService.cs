@@ -41,7 +41,11 @@ namespace OnlineStore.Service.Services
 
             var location = _mapper.Map<Location>(entity);
 
+            location.Create();
+
             response.Data = await _locationRepository.CreateAsync(location);
+
+            await _locationRepository.SaveChangesAsync();
 
             return response;
         }

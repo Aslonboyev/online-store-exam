@@ -24,5 +24,10 @@ namespace OnlineStore.UI.Pages.HomePages
         {
             InitializeComponent();
         }
+
+        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

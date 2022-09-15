@@ -1,4 +1,5 @@
-﻿using OnlineStore.Domain.Entities.Categories;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineStore.Domain.Entities.Categories;
 using OnlineStore.Domain.Entities.Products;
 using OnlineStore.Service.DTOs.CategoryDTOs;
 using OnlineStore.Service.Interfaces;
@@ -9,7 +10,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace OnlineStore.UI.Pages
@@ -20,7 +23,8 @@ namespace OnlineStore.UI.Pages
     public partial class HomePage : Page
     {
         private ICategoryService categoryService;
-        
+
+
         private IProductService productService;
 
         private IEnumerable<Category> AllCategories;
@@ -43,7 +47,7 @@ namespace OnlineStore.UI.Pages
             CartName.Text = "";
         }
 
-        private void CartBtn(object sender, System.Windows.RoutedEventArgs e)
+        public void CartBtn(object sender, System.Windows.RoutedEventArgs e)
         {
 
         }
@@ -71,7 +75,7 @@ namespace OnlineStore.UI.Pages
             }
         }
 
-        private async void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             thread = new Thread(async () =>
             {
@@ -98,11 +102,26 @@ namespace OnlineStore.UI.Pages
                 await this.Dispatcher.InvokeAsync(() =>
                 {
                     CategoryItem categoryItem = new CategoryItem();
-                    categoryItem.CategoryNameCtn.Content = category.Name;
+                    Button button = new Button()
+                    {
+                        Background = new SolidColorBrush(Color.FromRgb(36,47,61)),
+                    };
+                    button.Click += CategoryBtn_Click;
+                    categoryItem.CategoryNameCtn.Text = category.Name;
+                    button.Content = categoryItem;
                     
-                    CategoryList.Children.Add(categoryItem);
+                    CategoryList.Children.Add(button);
                 });
             }
+        }
+
+        private async void CategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProductList.Children.Clear();
+            string text = (((sender as Button).Content as CategoryItem).Content as TextBlock).Text;
+            var products = (await productService.GetAllAsync()).Data.Include(c => c.Category).
+                Where(p => p.Category.Name == text).ToList();
+            await LoadProducts(products);
         }
         private async Task LoadProducts(IEnumerable<Product> products)
         {
@@ -114,7 +133,7 @@ namespace OnlineStore.UI.Pages
                     productItem.PriceCtn.Content = product.Price;
                     productItem.ProductDescriptionCtn.Content = product.Description;
                     productItem.ProductNameCtn.Content = product.Name;
-                    //productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
+                    productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
 
                     ProductList.Children.Add(productItem);
                 });

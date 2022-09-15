@@ -15,6 +15,6 @@ namespace OnlineStore.Service.Interfaces
 
         Task<BaseResponse<Product>> GetAsync(Expression<Func<Product, bool>> expression);
 
-        Task<BaseResponse<IEnumerable<Product>>> GetAllAsync(Expression<Func<Product, bool>> expression = null);
+        Task<BaseResponse<IQueryable<Product>>> GetAllAsync(Expression<Func<Product, bool>> expression = null);
     }
 }

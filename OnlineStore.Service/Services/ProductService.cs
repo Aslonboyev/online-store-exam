@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using OnlineStore.Data.IRepositories;
 using OnlineStore.Data.Repositories;
 using OnlineStore.Domain.Common.Responses;
@@ -75,11 +76,13 @@ namespace OnlineStore.Service.Services
 
         }
 
-        public async Task<BaseResponse<IEnumerable<Product>>> GetAllAsync(Expression<Func<Product, bool>> expression = null)
+        public async Task<BaseResponse<IQueryable<Product>>> GetAllAsync(Expression<Func<Product, bool>> expression = null)
         {
-            var response = new BaseResponse<IEnumerable<Product>>();
+            var response = new BaseResponse<IQueryable<Product>>();
 
-            response.Data = _productRepository.GetAll(expression).Where(p => p.ItemState != ItemState.Deleted);
+            response.Data = _productRepository.GetAll(expression)
+                .Where(p => p.ItemState != ItemState.Deleted)
+                    .Include(c => c.Category);
 
             return response;
         }

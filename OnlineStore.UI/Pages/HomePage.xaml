@@ -45,7 +45,7 @@
                                                         Foreground="White"/>
                         <TextBlock x:Name="CartName" VerticalAlignment="Center" Text="Cart (0)"
                                                         FontSize="14" Foreground="White"
-                                                         FontWeight="SemiBold"
+                                                         FontWeight="SemiBold" 
                                                         />
 
                     </StackPanel>

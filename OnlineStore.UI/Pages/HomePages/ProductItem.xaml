@@ -18,7 +18,7 @@
             <Label x:Name="ProductDescriptionCtn" Content="kvjdmcskcmds" FontSize="7"/>
             <Label x:Name="PriceCtn" Content="13000" Margin="0 35 50 0" FontSize="10" FontWeight="Bold" Foreground="Black"/>
             <Button x:Name="ChooseBtn" Content="Choose" Background="#242F3D" BorderBrush="White" BorderThickness="0" 
-                        FontSize="5.4" Margin="43 -20 0 0" Height="15" Width="50"/>
+                        FontSize="5.4" Margin="43 -20 0 0" Height="15" Width="50" Click="ChooseBtn_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

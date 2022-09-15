@@ -7,7 +7,5 @@
              xmlns:local="clr-namespace:OnlineStore.UI.Pages.HomePages"
              mc:Ignorable="d" 
              d:MinHeight="50" d:MinWidth="80">
-    <Grid>
-        <Button Background="#242F3D" Foreground="White" x:Name="CategoryNameCtn" Content="consuption" FontSize="16"/>
-    </Grid>
+        <TextBlock x:Name="CategoryNameCtn" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="16" Text="consuption"/>
 </UserControl>
