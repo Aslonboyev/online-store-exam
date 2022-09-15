@@ -6,6 +6,7 @@
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnlineStore.UI.Pages.UserPages"
         mc:Ignorable="d" 
+      Loaded="Page_Loaded"
         Height="450" Width="800">
 
     <Border  CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">

@@ -52,20 +52,18 @@ namespace OnlineStore.UI.Pages
         {
             TextBox textBox = (TextBox)sender;
 
-            ProductList.Items.Clear();
+            ProductList.Children.Clear();
 
             string text = textBox.Text.ToString().ToLower();
 
-            if (text.Length > 3)
+            if (text.Length > 2)
             {
                 thread = new Thread(async () =>
                 {
-                    var response = await productService.GetAllAsync();
+                    var response = await productService.GetAllAsync(p => p.Name.ToLower().Contains(text)
+                        || p.Description.ToLower().Contains(text));
 
                     ALlProducts = response.Data;
-
-                    ALlProducts = ALlProducts.Where(p => p.Name.ToLower().Contains(text)
-                        || p.Description.ToLower().Contains(text));
 
                     await LoadProducts(ALlProducts);
                 });
@@ -77,8 +75,8 @@ namespace OnlineStore.UI.Pages
         {
             thread = new Thread(async () =>
             {
-                Dispatcher.Invoke(() => CategoryList.Items.Clear());
-                Dispatcher.Invoke(() => ProductList.Items.Clear());
+                Dispatcher.Invoke(() => CategoryList.Children.Clear());
+                Dispatcher.Invoke(() => ProductList.Children.Clear());
 
                 var response = await categoryService.GetAllAsync();
                 AllCategories = response.Data;
@@ -102,7 +100,7 @@ namespace OnlineStore.UI.Pages
                     CategoryItem categoryItem = new CategoryItem();
                     categoryItem.CategoryNameCtn.Content = category.Name;
                     
-                    CategoryList.Items.Add(categoryItem);
+                    CategoryList.Children.Add(categoryItem);
                 });
             }
         }
@@ -118,7 +116,7 @@ namespace OnlineStore.UI.Pages
                     productItem.ProductNameCtn.Content = product.Name;
                     //productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
 
-                    ProductList.Items.Add(productItem);
+                    ProductList.Children.Add(productItem);
                 });
             }
         }

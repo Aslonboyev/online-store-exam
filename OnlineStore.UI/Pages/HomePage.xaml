@@ -55,20 +55,16 @@
             <Grid Grid.Row="1">
                 <ScrollViewer  ScrollViewer.HorizontalScrollBarVisibility="Visible"  
                               Height="60" Margin="0,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                    <StackPanel Orientation="Horizontal">
-                        <ItemsControl Name="CategoryList">
-
-                        </ItemsControl>
+                    <StackPanel Orientation="Horizontal" Name="CategoryList">
+                        
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
             <Grid Grid.Row="2">
                 <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <DockPanel>
-                        <ItemsControl Name="ProductList">
+                    <WrapPanel Name="ProductList">
 
-                        </ItemsControl>
-                    </DockPanel>
+                    </WrapPanel>
                 </ScrollViewer>
             </Grid>
         </Grid>

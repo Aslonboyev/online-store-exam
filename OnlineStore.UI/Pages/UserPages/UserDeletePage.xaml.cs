@@ -28,11 +28,14 @@ namespace OnlineStore.UI.Pages.UserPages
 
             if (result.Data)
             {
-                RegisterPage registerPage = new RegisterPage();
+                System.Environment.Exit(0);
 
-                registerPage.Show();
+                //RegisterPage registerPage = new RegisterPage();
 
-                this.Close();
+                //registerPage.Show();
+                //this.Close();
+
+                MessageBox.Show("Deleted");
             }
         }
     }

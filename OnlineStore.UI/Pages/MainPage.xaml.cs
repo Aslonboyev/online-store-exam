@@ -27,6 +27,7 @@ namespace OnlineStore.UI.Pages
             //ButtonsStackPanelUI.Children.Add(new RadioButton() { Content = "New birnarsa" });
 
             FirstnameCtn.Content = firstname;
+            rdHome_Click(null, null);
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

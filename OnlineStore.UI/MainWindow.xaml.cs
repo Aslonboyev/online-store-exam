@@ -34,7 +34,7 @@ namespace OnlineStore.UI
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
 
-            if (Usernametxt.Text is not null || Passwordtxt.Password is not null)
+            if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
             {
                 var result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
 
@@ -49,6 +49,7 @@ namespace OnlineStore.UI
                 {
                     Usernametxt.Clear();
                     Passwordtxt.Clear();
+                    MessageBox.Show("Wrong username or password", "Please double check!");
                 }
             }
         }
@@ -60,6 +61,14 @@ namespace OnlineStore.UI
             registerPage.Show();
 
             this.Close();
+        }
+
+        private void Passwordtxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                LogInBtn(sender, e);
+            }
         }
     }
 }

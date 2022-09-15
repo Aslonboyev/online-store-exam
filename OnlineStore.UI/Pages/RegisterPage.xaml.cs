@@ -38,11 +38,13 @@ namespace OnlineStore.UI.Pages
 
                 var result = await _userService.CreateAsync(userCreationDTO);
 
-                if (result is not null)
+                if (result.Data.FirstName is not null)
                 {
                     mainWindow.Show();
                     this.Close();
                 }
+                else
+                    MessageBox.Show("Check your details. \nYour details are already taken or wrong!");
             }
         }
 
