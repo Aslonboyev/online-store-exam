@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace OnlineStore.UI.Pages.HomePages
 {
     /// <summary>
-    /// Interaction logic for CartPage.xaml
+    /// Interaction logic for Item.xaml
     /// </summary>
-    public partial class CartPage : Page
+    public partial class Item : UserControl
     {
-        public CartPage()
+        public Item()
         {
             InitializeComponent();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Checkout_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

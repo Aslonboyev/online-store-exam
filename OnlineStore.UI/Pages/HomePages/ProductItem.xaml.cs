@@ -21,7 +21,6 @@ namespace OnlineStore.UI.Pages.HomePages
     /// </summary>
     public partial class ProductItem : UserControl
     {
-
         public ProductItem()
         {
             InitializeComponent();
@@ -31,8 +30,11 @@ namespace OnlineStore.UI.Pages.HomePages
         {
             Button button = (Button) sender;
             
-            MainWindow.ProductsBoxWIthId.Add(long.Parse(button.Uid[2..]));
+            //MainWindow.ProductsBoxWIthId.Add(long.Parse(button.Uid[2..]));
 
+            ChooseProduct chooseProduct = new ChooseProduct(long.Parse(button.Uid[2..]));
+
+            chooseProduct.Show();
         }
     }
 }

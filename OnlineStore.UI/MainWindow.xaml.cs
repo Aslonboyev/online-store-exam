@@ -14,13 +14,15 @@ namespace OnlineStore.UI
     public partial class MainWindow : Window
     {
         private readonly IUserService _userService;
-        public static ICollection<long> ProductsBoxWIthId { get; set; }
+        public static List<long> ProductsBoxWIthId { get; set; }
+        public static List<int> ProductCount { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             _userService = new UserService();
             ProductsBoxWIthId = new List<long>();
+            ProductCount = new List<int>();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
