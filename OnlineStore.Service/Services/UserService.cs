@@ -34,26 +34,33 @@ namespace OnlineStore.Service.Services
 
             var response = new BaseResponse<User>();
 
+
             if (await _userRepository.GetAsync(p => p.Email == entity.Email ||
                                                p.Username == entity.Username ||
                                                p.Phone == entity.Phone) is not null)
             {
                 response.Error = new ErrorResponse(400, "Client is already exists");
-
-                return response;
             }
 
-            var entityToCreate = _mapper.Map<User>(entity);
+            else if(entity.Email.IsEmial() && entity.Phone.IsPhoneNumber())
+            {
+                var entityToCreate = _mapper.Map<User>(entity);
 
-            entityToCreate.Create();
+                entityToCreate.Create();
 
-            entityToCreate.Password = entityToCreate.Password.GetHash();
+                entityToCreate.Password = entityToCreate.Password.GetHash();
 
-            response.Data = await _userRepository.CreateAsync(entityToCreate);
+                response.Data = await _userRepository.CreateAsync(entityToCreate);
 
-            await _userRepository.SaveChangesAsync();
+                await _userRepository.SaveChangesAsync();
+            }
+            else
+            {
+                response.Error = new ErrorResponse(402, "User gave wrong data");
+            }
 
             return response;
+
         }
 
         public async Task<BaseResponse<bool>> DeleteAsync(Expression<Func<User, bool>> expression)
@@ -97,6 +104,7 @@ namespace OnlineStore.Service.Services
 
             if (response.Data is null || response.Data.ItemState == ItemState.Deleted)
             {
+                response.Data = null;
                 response.Error = new ErrorResponse(404, "Client is not found");
 
                 return response;
@@ -109,22 +117,26 @@ namespace OnlineStore.Service.Services
         {
             var response = new BaseResponse<User>();
 
-            var entityToUpdate = await _userRepository.GetAsync(entity => entity.Id == id);
+            var result = await _userRepository.GetAsync(p => p.Email == entity.Email ||
+                p.Username == entity.Username || p.Phone == entity.Phone);
 
-            if (entityToUpdate is null || entityToUpdate.ItemState == ItemState.Deleted)
+            var entityToUpdate = await _userRepository.GetAsync(p => p.Id == id);
+
+            if (entityToUpdate is null || result is not null || entityToUpdate.ItemState == ItemState.Deleted)
             {
                 response.Error = new ErrorResponse(404, "Client is not found for updating");
-
-                return response;
             }
 
-            entityToUpdate = _mapper.Map(entity, entityToUpdate);
+            else if (entity.Email.IsEmial() && !entity.Phone.IsPhoneNumber())
+            {
+                entityToUpdate = _mapper.Map(entity, entityToUpdate);
 
-            entityToUpdate.Update();
+                entityToUpdate.Update();
 
-            _userRepository.Update(entityToUpdate);
+                _userRepository.Update(entityToUpdate);
 
-            await _userRepository.SaveChangesAsync();
+                await _userRepository.SaveChangesAsync();
+            }
 
             return response;
         }
@@ -133,16 +145,12 @@ namespace OnlineStore.Service.Services
         {
             var response = new BaseResponse<User>();
 
-            var result = await _userRepository.GetAsync(p => p.Username == username);
+            var result = await _userRepository.GetAsync(p => p.Username == username && p.ItemState != ItemState.Deleted);
 
             if (result is not null && result.Password == password.GetHash())
-            {
                 response.Data = result;
-
-                return response;
-            }
-
-            response.Data = null;
+            else
+                response.Data = null;
 
             return response;
         }

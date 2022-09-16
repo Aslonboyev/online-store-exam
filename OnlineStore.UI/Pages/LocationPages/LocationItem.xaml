@@ -13,20 +13,20 @@
             <ColumnDefinition/>     
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Margin="20 0 0 0">
-            <Label x:Name="LocationName" Content="Chilonzor 19" FontSize="24" FontWeight="Bold" Foreground="Black"
+            <Label x:Name="LocationNameCtn" Content="Chilonzor 19" FontSize="24" FontWeight="Bold" Foreground="Black"
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </Grid>
         <StackPanel Grid.Column="1" Margin="20 0 0 0">
-            <Label x:Name="LocationReagion" Content="Buxoro" FontSize="22" FontWeight="Bold" Foreground="Black"
+            <Label x:Name="LocationReagionCtn" Content="Buxoro" FontSize="22" FontWeight="Bold" Foreground="Black"
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            <Label x:Name="LocationAddres" Content="Buxoro" FontSize="22" FontWeight="Bold" Foreground="Black"
+            <Label x:Name="LocationAddresCtn" Content="Buxoro" FontSize="22" FontWeight="Bold" Foreground="Black"
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <Label x:Name="LocationWorkPeriod" Content="Work period:" FontSize="22" FontWeight="Bold" Foreground="Black"
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-            <Label x:Name="LocationWorkTime" Content="10:00 - 03:00" FontSize="22" FontWeight="Bold" Foreground="Black"
+            <Label x:Name="LocationWorkTimeCtn" Content="10:00 - 03:00" FontSize="22" FontWeight="Bold" Foreground="Black"
                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
        </StackPanel>
     </Grid>

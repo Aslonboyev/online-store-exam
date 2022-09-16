@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace OnlineStore.UI.Pages.HomePages
 {
     /// <summary>
-    /// Interaction logic for CategoryItem.xaml
+    /// Interaction logic for Item.xaml
     /// </summary>
-    public partial class CategoryItem : UserControl
+    public partial class Item : UserControl
     {
-        public CategoryItem()
+        public Item()
         {
             InitializeComponent();
-        }
-
-        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

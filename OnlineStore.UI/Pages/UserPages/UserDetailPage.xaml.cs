@@ -17,7 +17,7 @@ namespace OnlineStore.UI.Pages.UserPages
             InitializeComponent();
         }
 
-        private void OnLoaded(User user)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             _user = MainPage.UserDetailData;
 
@@ -26,7 +26,6 @@ namespace OnlineStore.UI.Pages.UserPages
             EmialCtn.Content = _user.Email;
             PhoneCtn.Content = _user.Phone;
             UsernameCtn.Content = _user.Username;
-
         }
 
         private void BackToStore(object sender, RoutedEventArgs e)
@@ -52,7 +51,7 @@ namespace OnlineStore.UI.Pages.UserPages
         {
             UserUpdatePage userUpdatePage = new UserUpdatePage(_user.Id);
 
-            //PagesNavigation.Navigate(new System.Uri("Pages/UserUpdatePage.xaml", UriKind.RelativeOrAbsolute));
+            this.NavigationService.Navigate(userUpdatePage);
         }
 
     }

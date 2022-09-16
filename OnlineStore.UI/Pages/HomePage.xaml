@@ -6,11 +6,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OnlineStore.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="HomePage">
+      d:DesignHeight="450" 
+      d:DesignWidth="800"
+      Title="HomePage" 
+      Loaded="Page_Loaded">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-        <Grid>
+        <Grid Margin="0,6,0,-6">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="1.1*"/>
@@ -30,37 +32,63 @@
                 </StackPanel>-->
 
                 <Grid Grid.Column="1">
-                    <TextBox Name="SearchBar" TextChanged="SearchBar_TextChanged" Margin="8" Height="30" Background="#242F3D"
-                                 md:TextFieldAssist.TextFieldCornerRadius="5" md:HintAssist.Hint="Search" BorderThickness="0"
+                    <TextBox Name="SearchBar"
+                             TextChanged="SearchBar_TextChanged"
+                             Margin="6,13,10,13"
+                             Height="30"
+                             Background="#242F3D"
+                             md:TextFieldAssist.TextFieldCornerRadius="5"
+                             md:HintAssist.Hint="Search" BorderThickness="0"
                              PreviewTextInput="SearchBar_PreviewTextInput"
-                                 Foreground="Snow" Padding="7" md:TextFieldAssist.UnderlineBrush="Transparent"/>
+                             Foreground="Snow" Padding="5"
+                             md:TextFieldAssist.UnderlineBrush="Transparent"
+                             VerticalContentAlignment="Center"
+                             Style="{DynamicResource  MaterialDesignTextBoxBase}"/>
                 </Grid>
-                <Button Grid.Column="2" x:Name="CartnBtnName" Width="130" Height="30"
-                                            md:ButtonAssist.CornerRadius="5" 
-                                            Click="CartBtn" Background="#242F3D" BorderThickness="0"
-                                            HorizontalAlignment="Left" Margin="60 4 0 0">
+                <Button Grid.Column="2" 
+                        x:Name="CartnBtnName"
+                        Width="130" Height="30"
+                        md:ButtonAssist.CornerRadius="5" 
+                        Click="CartBtn" 
+                        Background="#242F3D" 
+                        BorderThickness="0"
+                        HorizontalAlignment="Left" 
+                        Margin="60 4 0 0">
+                    
                     <StackPanel Orientation="Horizontal">
                         <md:PackIcon Width="30" Height="25"
                                                         Kind="Cart"
                                                         Foreground="White"/>
-                        <TextBlock x:Name="CartName" VerticalAlignment="Center" Text="Cart (0)"
-                                                        FontSize="14" Foreground="White"
-                                                         FontWeight="SemiBold"
-                                                        />
+                        <TextBlock x:Name="CartName" 
+                                   VerticalAlignment="Center" 
+                                   Text="Carts"
+                                   FontSize="14" 
+                                   Foreground="White"
+                                   FontWeight="SemiBold"/>
 
                     </StackPanel>
                 </Button>
-            </Grid>
-            <Grid Grid.Row="1">
-                
-                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
-                    <ItemsControl Name="CategoryList">
+            </Grid >
 
-                    </ItemsControl>
+            <Grid Grid.Row="1">
+                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible"  
+                              Height="60" 
+                              Margin="0,0,0,0" 
+                              ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Orientation="Horizontal" 
+                                Name="CategoryList">
+                        
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
+            <Grid Grid.Row="2">
+                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <WrapPanel Name="ProductList">
 
-            <Label Grid.Row="2" Content="Home" Foreground="Black" FontSize="50" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,126,0,0"/>
+                    </WrapPanel>
+                </ScrollViewer>
+            </Grid>
         </Grid>
+
     </Border>
 </Page>

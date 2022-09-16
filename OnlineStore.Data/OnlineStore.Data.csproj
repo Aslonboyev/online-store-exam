@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Car1.jpg" />
+    <None Remove="Images\Car2.jpg" />
+    <None Remove="Images\car3.jpg" />
+    <None Remove="Images\CarPhoto.jpg" />
+    <None Remove="Images\Gosht%28P%29.jpg" />
+    <None Remove="Images\Humburger.jpg" />
+    <None Remove="Images\IPhone.jpg" />
+    <None Remove="Images\KFC.jpg" />
+    <None Remove="Images\Sumsung.jpg" />
+    <None Remove="Images\TV.jpg" />
+    <None Remove="Images\TV1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +33,20 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineStore.Domain\OnlineStore.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Car1.jpg" />
+    <Resource Include="Images\Car2.jpg" />
+    <Resource Include="Images\car3.jpg" />
+    <Resource Include="Images\CarPhoto.jpg" />
+    <Resource Include="Images\Gosht(P).jpg" />
+    <Resource Include="Images\Humburger.jpg" />
+    <Resource Include="Images\IPhone.jpg" />
+    <Resource Include="Images\KFC.jpg" />
+    <Resource Include="Images\Sumsung.jpg" />
+    <Resource Include="Images\TV.jpg" />
+    <Resource Include="Images\TV1.jpg" />
   </ItemGroup>
 
 </Project>

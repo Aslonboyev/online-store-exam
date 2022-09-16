@@ -25,8 +25,7 @@ namespace OnlineStore.Domain.Entities.Products
         [Required]
         public string ImagePath { get; set; }
 
-        [Required]
-        public long DiscountId { get; set; }
+        public long? DiscountId { get; set; }
         public Discount Discount { get; set; }
 
         [Required]

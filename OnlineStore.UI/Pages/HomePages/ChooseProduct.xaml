@@ -1,0 +1,61 @@
+﻿<Window x:Class="OnlineStore.UI.Pages.HomePages.ChooseProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:OnlineStore.UI.Pages.HomePages"
+        mc:Ignorable="d"
+        Title="ChooseProduct" Height="200" Width="400"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        AllowsTransparency="True" Loaded="Window_Loaded"
+        WindowStyle="None" Background="White"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <md:PopupBox HorizontalAlignment="Left" Margin="0 5 5 0"
+                             PlacementMode="BottomAndAlignRightEdges"
+                             StaysOpen="False" Height="25">
+                <StackPanel>
+                    <Button x:Name="btn_exit" ToolTip="Close"
+                                Content="Exit Application" Click="exitApp"/>
+
+                </StackPanel>
+            </md:PopupBox>
+            <Image Grid.Column="0" Visibility="Visible" Source="..\..\Assets\Avatars\images.jpg" x:Name="ProductImage"
+               Margin="10 0 0 0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10">
+            <Label x:Name="ProductNameCtn" Content="Cola" Foreground="Black" FontWeight="Bold"
+                       FontSize="18" VerticalAlignment="Top"/>
+            <Label x:Name="ProductDescriptionCtn" Content="kvjdmcskcmds" FontSize="11" Height="40" Width="210"
+                   VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Total amount" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <Label x:Name="PriceCtn" Margin="50 0 0 0" Content="1,4$" Width="80" HorizontalAlignment="Right"
+                       FontSize="14" FontWeight="Bold" Foreground="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Height="40" Width="150" Content="Count" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 10 0 0" 
+                           FontSize="14" FontWeight="Bold"/>
+                    <Label x:Name="CountCtn" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
+                    <StackPanel Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 20 0">
+                        <Button Style="{StaticResource buttonCounter}" x:Name="AddBtn" Click="AddBtn_Click">
+                            <md:PackIcon Kind="Add" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+
+                        <Button Style="{StaticResource buttonCounter}" Margin="0 5 0 0" x:Name="LowBtn" Click="LowBtn_Click">
+                            <md:PackIcon Kind="Minus" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+                <Button Content="Add To Cart List" Click="Button_Click" Background="#26ABE3"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

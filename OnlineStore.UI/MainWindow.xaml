@@ -42,6 +42,7 @@
                          MaterialDesignOutlinedTextBox}"/>
 
                 <PasswordBox Margin="20" x:Name="Passwordtxt" Width="300" FontSize="18"
+                             KeyDown="Passwordtxt_KeyDown"
                              md:HintAssist.Hint="Enter Password" BorderBrush="{DynamicResource MaterialDesignDivider}"
                              BorderThickness="1" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"/>
 

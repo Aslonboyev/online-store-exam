@@ -6,69 +6,59 @@
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:OnlineStore.UI.Pages.UserPages"
         mc:Ignorable="d" 
-        Height="650" Width="450">
+      Loaded="Page_Loaded"
+        Height="450" Width="800">
 
     <Border  CornerRadius="10" Background="{DynamicResource SecundaryBackgroundColor}">
         <StackPanel>
-            <md:PopupBox HorizontalAlignment="Right" Margin="0 20 20 0"
-                             PlacementMode="BottomAndAlignRightEdges"
-                             StaysOpen="False" Height="25">
-                <StackPanel>
-                    <Button ToolTip="Back to Store" Margin="0 8 0 0" 
-                                Content="Store" Click="BackToStore"/>
-
-                    <Button x:Name="btn_exit" ToolTip="Close Application"
-                                Content="Exit" Click="exitApp"/>
-
-                </StackPanel>
-            </md:PopupBox>
             <StackPanel Margin="0 0 0 0" HorizontalAlignment="Center">
 
 
                 <Image Margin="0 0 0 5" Height="120"
                        Source="..\..\Assets\Avatars\images.jpg" Visibility="Visible"/>
 
-                <WrapPanel Background="Transparent" Margin="0 30 0 6">
+                <WrapPanel Background="Transparent" Margin="0 10 0 5">
                     <Label Foreground="{DynamicResource PrimaryBlueColor}" Content="Firstname" 
                            VerticalAlignment="Center" FontSize="21"/>
                     <Label x:Name="FirstnameCtn" FontWeight="Bold" Margin="30 0 60 0" FontSize="24" Content="Temur"/>
                 </WrapPanel>
 
-                <WrapPanel Background="Transparent" Margin="0 6">
+                <WrapPanel Background="Transparent" Margin="0 5">
                     <Label Foreground="{DynamicResource PrimaryBlueColor}" Content="Lastname" 
                            VerticalAlignment="Center" FontSize="21"/>
                     <Label x:Name="LastnameCtn" FontWeight="Bold" Margin="30 0 60 0" FontSize="24" Content="Aslonboyev"/>
                 </WrapPanel>
 
 
-                <WrapPanel Background="Transparent" Margin="0 6">
+                <WrapPanel Background="Transparent" Margin="0 5">
                     <Label Foreground="{DynamicResource PrimaryBlueColor}" Content="Phone" 
                            VerticalAlignment="Center" FontSize="21"/>
                     <Label x:Name="PhoneCtn" FontWeight="Bold" Margin="20 0 0 0" FontSize="24" Content="+998996474071"/>
                 </WrapPanel>
 
-                <WrapPanel Background="Transparent" Margin="0 6">
+                <WrapPanel Background="Transparent" Margin="0 5">
                     <Label Foreground="{DynamicResource PrimaryBlueColor}" Content="Username" 
                            VerticalAlignment="Center" FontSize="21"/>
                     <Label x:Name="UsernameCtn" FontWeight="Bold" Margin="20 0 0 0" FontSize="24" Content="temuroff07"/>
                 </WrapPanel>
 
-                <WrapPanel Background="Transparent" Margin="0 6">
+                <WrapPanel Background="Transparent" Margin="0 5">
                     <Label Foreground="{DynamicResource PrimaryBlueColor}" Content="Email" 
                            VerticalAlignment="Center" FontSize="21"/>
                     <Label x:Name="EmialCtn" FontWeight="Bold" Margin="20 0 0 0" FontSize="18" Content="temur07@gmail.com"/>
                 </WrapPanel>
 
-                <Button Margin="0 20 0 0" x:Name="Loginbtn" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                        md:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" md:ButtonAssist.CornerRadius="10"
+                <WrapPanel  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0 0 20">
+                    <Button Margin="0 5 25 0" x:Name="Loginbtn" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                        md:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="110" md:ButtonAssist.CornerRadius="10"
                         FontSize="18" Content="Update"  Click="UserUpdateBtn" Background="{DynamicResource PrimaryBlueColor}"
                         ToolTip="Do you want change your information?" BorderBrush="White"/>
 
-                <Button Margin="0 20 0 0" x:Name="Createbtn" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
-                        md:ShadowAssist.ShadowDepth="Depth0" Background="{DynamicResource PrimaryBlueColor}" Height="53" Width="300" 
+                    <Button Margin="15 5 0 0" x:Name="Createbtn" Style="{StaticResource MaterialDesignFlatDarkBgButton}"
+                        md:ShadowAssist.ShadowDepth="Depth0" Background="{DynamicResource PrimaryBlueColor}" Height="53" Width="110" 
                         FontSize="18" Content="Delete" Click="UserDeleteBtn" ToolTip="Do you want delete your information?"
                         md:ButtonAssist.CornerRadius="10" BorderBrush="White"/>
-
+                </WrapPanel>
             </StackPanel>
         </StackPanel>
     </Border>

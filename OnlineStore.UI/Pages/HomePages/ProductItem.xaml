@@ -5,20 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:OnlineStore.UI.Pages.HomePages"
              mc:Ignorable="d" 
-             Height="200" Width="110" Background="White">
-    <Grid Background="White">
+             Height="400" Width="250" Background="White">
+    <Grid Margin="25">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="..\..\Assets\Avatars\images.jpg"/>
-        <StackPanel Grid.Row="1" Margin="5">
+        <Image Grid.Row="0" Visibility="Visible" Source="..\..\Assets\Avatars\images.jpg" x:Name="ProductImage"/>
+        <StackPanel Grid.Row="1" Margin="10">
             <Label x:Name="ProductNameCtn" Content="Cola" Foreground="Black" FontWeight="Bold"
-                       FontSize="12" VerticalAlignment="Top"/>
-            <Label x:Name="ProductDescriptionCtn" Content="kvjdmcskcmds" FontSize="7"/>
-            <Label x:Name="PriceCtn" Content="13000" Margin="0 35 50 0" FontSize="10" FontWeight="Bold" Foreground="Black"/>
+                       FontSize="18" VerticalAlignment="Top"/>
+            <Label x:Name="ProductDescriptionCtn" Content="kvjdmcskcmds" FontSize="11"/>
+            <Label x:Name="PriceCtn" Content="13000" Margin="5 85 75 0" FontSize="12" FontWeight="Bold" Foreground="Black"/>
             <Button x:Name="ChooseBtn" Content="Choose" Background="#242F3D" BorderBrush="White" BorderThickness="0" 
-                        FontSize="5.4" Margin="43 -20 0 0" Height="15" Width="50"/>
+                        FontSize="9" Margin="85 -25 0 0" Height="25" Width="80" Click="ChooseBtn_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -7,43 +7,53 @@ using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 
 
-LocationCreationDTO locationCreation = new LocationCreationDTO()
+LocationCreationDTO productCreation1 = new LocationCreationDTO()
 {
-    Address = "Chilonzor 10",
-    Name = "Golden",
-    Region = Region.Qoraqalpogiston,
-    WorkEndedAt = TimeOnly.MaxValue,
-    WorkStartedAt = TimeOnly.MinValue
-};
-LocationCreationDTO locationCreation1 = new LocationCreationDTO()
-{
-    Address = "Chilonzor, Shuhrat",
     Name = "TT3",
-    Region = Region.Fargona,
-    WorkEndedAt = TimeOnly.MaxValue,
-    WorkStartedAt = TimeOnly.MinValue
-};
-LocationCreationDTO locationCreation2 = new LocationCreationDTO()
-{
-    Address = " Shuhrat",
-    Name = "Qatartol",
+    Address = "Chilonzor",
     Region = Region.Namangan,
     WorkEndedAt = TimeOnly.MaxValue,
-    WorkStartedAt = TimeOnly.MinValue
+    WorkStartedAt = TimeOnly.MinValue,
 };
-LocationCreationDTO locationCreation3 = new LocationCreationDTO()
+
+LocationCreationDTO productCreation2 = new LocationCreationDTO()
 {
-    Address = "7-kvartal Yunusobod",
-    Name = "Big House",
-    Region = Region.Navoi,
+    Name = "BMW",
+    Address = "Yunosobod 7-kv",
+    Region = Region.Sirdaryo,
     WorkEndedAt = TimeOnly.MaxValue,
-    WorkStartedAt = TimeOnly.MinValue
+    WorkStartedAt = TimeOnly.MinValue,
+};
+LocationCreationDTO productCreation3 = new LocationCreationDTO()
+{
+    Name = "Mers",
+    Address = "Olmazor 6-kv",
+    Region = Region.Fargona,
+    WorkEndedAt = TimeOnly.MaxValue,
+    WorkStartedAt = TimeOnly.MinValue,
+};
+LocationCreationDTO productCreation4 = new LocationCreationDTO()
+{
+    Name = "Shuhrat",
+    Address = "Bunyodkor statidion",
+    Region = Region.Qoraqalpogiston,
+    WorkEndedAt = TimeOnly.MaxValue,
+    WorkStartedAt = TimeOnly.MinValue,
+};
+LocationCreationDTO productCreation5 = new LocationCreationDTO()
+{
+    Name = "Bentle",
+    Address = "Rayhon choraha 7-kv",
+    Region = Region.Sirdaryo,
+    WorkEndedAt = TimeOnly.MaxValue,
+    WorkStartedAt = TimeOnly.MinValue,
 };
 
 ILocationService locationService = new LocationService();
 
-locationService.CreateAsync(locationCreation);
+await locationService.CreateAsync(productCreation1);
 
-locationService.CreateAsync(locationCreation1);
-locationService.CreateAsync(locationCreation2);
-locationService.CreateAsync(locationCreation3);
+await locationService.CreateAsync(productCreation2);
+await locationService.CreateAsync(productCreation3);
+await locationService.CreateAsync(productCreation4);
+await locationService.CreateAsync(productCreation5);

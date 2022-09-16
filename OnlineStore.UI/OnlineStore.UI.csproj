@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Avatars\Call_center.jpg" />
     <None Remove="Assets\Avatars\images.jpg" />
     <None Remove="Assets\Avatars\logos.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\Avatars\Call_center.jpg" />
     <Resource Include="Assets\Avatars\images.jpg" />
   </ItemGroup>
 
