@@ -16,6 +16,7 @@ namespace OnlineStore.UI
         private readonly IUserService _userService;
         public static List<long> ProductsBoxWIthId { get; set; }
         public static List<int> ProductCount { get; set; }
+        public static long Id { get; set; }
 
         public MainWindow()
         {
@@ -46,6 +47,8 @@ namespace OnlineStore.UI
                 if (result.Data is not null)
                 {
                     MainPage mainPage = new MainPage(result.Data.Id, result.Data.FirstName);
+
+                    Id = result.Data.Id;
 
                     mainPage.Show();
                     this.Close();

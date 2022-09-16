@@ -30,10 +30,10 @@ namespace OnlineStore.UI.Pages.UserPages
             {
                 System.Environment.Exit(0);
 
-                //RegisterPage registerPage = new RegisterPage();
+                RegisterPage registerPage = new RegisterPage();
 
-                //registerPage.Show();
-                //this.Close();
+                registerPage.Show();
+                this.Close();
 
                 MessageBox.Show("Deleted");
             }

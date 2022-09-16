@@ -34,7 +34,7 @@
             <!--Products-->
             <Grid Grid.Row="1">
                 <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <StackPanel x:Name="FinalProducts">
+                    <StackPanel x:Name="FinalProductsList">
                         
                     </StackPanel>
                 </ScrollViewer>
@@ -45,7 +45,7 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <TextBlock Text="Subtotal :" FontSize="18" FontWeight="Bold"/>
-                    <TextBlock x:Name="TotalPrice" Text="195.00 $" FontWeight="SemiBold" FontSize="16" Margin="30 0 0 0"/>
+                    <Label x:Name="TotalPrice" Content="195.00 $" FontWeight="SemiBold" FontSize="16" Margin="30 0 0 0"/>
                 </StackPanel>
             </Grid>
         </Grid>
@@ -90,7 +90,7 @@
 
                 <TextBlock Text="Card Number" Style="{StaticResource titleText}"/>
                 <TextBox Margin="0 5 0 30"
-                         x:Name="CardNumber"/>
+                         x:Name="CardNumberCtn"/>
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -101,13 +101,13 @@
                     <StackPanel>
                         <TextBlock Text="Expire Date" Style="{StaticResource titleText}"/>
                         <TextBox Margin="0 5 0 0" 
-                                 x:Name="CardDate"/>
+                                 x:Name="CardDateCtn"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="30 0 0 0" Width="50">
                         <TextBlock Text="CVV" Style="{StaticResource titleText}"/>
                         <TextBox Margin="0 5 0 0"
-                                 x:Name="CardCVV"/>
+                                 x:Name="CardCVVCtn"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>

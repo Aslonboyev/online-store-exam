@@ -10,7 +10,7 @@
         Background="White"
         FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="4">
             <ItemsControl Name="CategoryList">
                 <StackPanel Margin="75,0" VerticalAlignment="Center">
 

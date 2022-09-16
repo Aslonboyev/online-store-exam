@@ -51,7 +51,7 @@ namespace OnlineStore.UI.Pages.UserPages
         {
             UserUpdatePage userUpdatePage = new UserUpdatePage(_user.Id);
 
-            //PagesNavigation.Navigate(new System.Uri("Pages/UserUpdatePage.xaml", UriKind.RelativeOrAbsolute));
+            this.NavigationService.Navigate(userUpdatePage);
         }
 
     }

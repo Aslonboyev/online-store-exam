@@ -52,11 +52,14 @@ namespace OnlineStore.UI.Pages
             CartName.Text = "";
         }
 
-        public void CartBtn(object sender, System.Windows.RoutedEventArgs e)
+        public void CartBtn(object sender, RoutedEventArgs e)
         {
+            CartPage cartPage = new CartPage();
+            //PagesNavigation.Navigate(new System.Uri("Pages/PaymentPage.xaml", UriKind.RelativeOrAbsolute));
             var result = MainWindow.ProductsBoxWIthId;
+            this.NavigationService.Navigate(cartPage);
 
-            MessageBox.Show(MainWindow.ProductsBoxWIthId.Count().ToString());
+
         }
 
 

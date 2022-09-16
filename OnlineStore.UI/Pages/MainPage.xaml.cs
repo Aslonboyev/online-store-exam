@@ -55,17 +55,13 @@ namespace OnlineStore.UI.Pages
 
         private void rdContacts_Click(object sender, RoutedEventArgs e)
         {
+
             PagesNavigation.Navigate(new System.Uri("Pages/ContactPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void rdLocation_Click(object sender, RoutedEventArgs e)
         {
             PagesNavigation.Navigate(new System.Uri("Pages/LocationPage.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void rdPayment_Click(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new System.Uri("Pages/PaymentPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private async void UserBtn(object sender, RoutedEventArgs e)
