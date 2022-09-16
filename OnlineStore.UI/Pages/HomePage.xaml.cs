@@ -24,12 +24,15 @@ namespace OnlineStore.UI.Pages
     {
         private ICategoryService categoryService;
 
+        public static Page HomePageObject;
 
         private IProductService productService;
 
         private IEnumerable<Category> AllCategories;
 
         private IEnumerable<Product> ALlProducts;
+
+        private IEnumerable<Product> AllCarts;
 
         private Thread thread;
 
@@ -40,6 +43,8 @@ namespace OnlineStore.UI.Pages
             productService = new ProductService();
 
             categoryService = new CategoryService();
+
+            HomePageObject = this;
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -49,8 +54,11 @@ namespace OnlineStore.UI.Pages
 
         public void CartBtn(object sender, System.Windows.RoutedEventArgs e)
         {
+            var result = MainWindow.ProductsBoxWIthId;
 
+            MessageBox.Show(MainWindow.ProductsBoxWIthId.Count().ToString());
         }
+
 
         private async void SearchBar_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
@@ -58,7 +66,7 @@ namespace OnlineStore.UI.Pages
 
             ProductList.Children.Clear();
 
-            string text = textBox.Text.ToString().ToLower();
+            string text = textBox.Text.ToLower();
 
             if (text.Length > 2)
             {
@@ -134,10 +142,12 @@ namespace OnlineStore.UI.Pages
                     productItem.ProductDescriptionCtn.Content = product.Description;
                     productItem.ProductNameCtn.Content = product.Name;
                     productItem.ProductImage.Source = new BitmapImage(new Uri(product.ImagePath));
+                    productItem.ChooseBtn.Uid = $"Id{product.Id}";
 
                     ProductList.Children.Add(productItem);
                 });
             }
         }
+
     }
 }

@@ -43,7 +43,7 @@
                         <md:PackIcon Width="30" Height="25"
                                                         Kind="Cart"
                                                         Foreground="White"/>
-                        <TextBlock x:Name="CartName" VerticalAlignment="Center" Text="Cart (0)"
+                        <TextBlock x:Name="CartName" VerticalAlignment="Center" Text="Carts"
                                                         FontSize="14" Foreground="White"
                                                          FontWeight="SemiBold" 
                                                         />

@@ -1,5 +1,4 @@
-﻿using OnlineStore.Domain.Entities.Products;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,22 +16,13 @@ using System.Windows.Shapes;
 namespace OnlineStore.UI.Pages.HomePages
 {
     /// <summary>
-    /// Interaction logic for ProductItem.xaml
+    /// Interaction logic for CartPage.xaml
     /// </summary>
-    public partial class ProductItem : UserControl
+    public partial class CartPage : Page
     {
-
-        public ProductItem()
+        public CartPage()
         {
             InitializeComponent();
-        }
-
-        private void ChooseBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button) sender;
-            
-            MainWindow.ProductsBoxWIthId.Add(long.Parse(button.Uid[2..]));
-
         }
     }
 }

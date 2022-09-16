@@ -1,6 +1,8 @@
-﻿using OnlineStore.Service.Interfaces;
+﻿using OnlineStore.Domain.Entities.Products;
+using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using OnlineStore.UI.Pages;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,12 +14,13 @@ namespace OnlineStore.UI
     public partial class MainWindow : Window
     {
         private readonly IUserService _userService;
+        public static ICollection<long> ProductsBoxWIthId { get; set; }
 
         public MainWindow()
         {
-            _userService = new UserService();
-
             InitializeComponent();
+            _userService = new UserService();
+            ProductsBoxWIthId = new List<long>();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
