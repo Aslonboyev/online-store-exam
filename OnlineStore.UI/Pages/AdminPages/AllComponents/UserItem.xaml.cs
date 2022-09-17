@@ -13,19 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.AdminPages
+namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
-    /// Interaction logic for UserPage.xaml
+    /// Interaction logic for UserItem.xaml
     /// </summary>
-    public partial class UserPage : Page
+    public partial class UserItem : UserControl
     {
-        public UserPage()
+        public UserItem()
         {
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

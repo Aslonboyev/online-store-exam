@@ -40,12 +40,16 @@ namespace OnlineStore.UI
 
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
-            if(Usernametxt.Text.ToString() == "Admin" && Passwordtxt.Password.ToString() == "1234")
+            if(Usernametxt.Text.ToString() == "admin" && Passwordtxt.Password.ToString() == "1234")
             {
                 IsAdmin = true;
+
+                MainPage mainPage = new MainPage(0, null);
+                mainPage.Show();
+                this.Close();
             }
 
-            if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
+            else if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
             {
                 var result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
 

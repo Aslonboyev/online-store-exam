@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace OnlineStore.UI.Pages.AdminPages
 {
     /// <summary>
-    /// Interaction logic for LocationPage.xaml
+    /// Interaction logic for AdminLocationPage.xaml
     /// </summary>
-    public partial class LocationPage : Page
+    public partial class AdminLocationPage : Page
     {
-        public LocationPage()
+        public AdminLocationPage()
         {
             InitializeComponent();
         }
