@@ -17,6 +17,7 @@ namespace OnlineStore.UI
         public static List<long> ProductsBoxWIthId { get; set; }
         public static List<int> ProductCount { get; set; }
         public static long Id { get; set; }
+        public static bool IsAdmin { get; set; } = false;
 
         public MainWindow()
         {
@@ -39,6 +40,10 @@ namespace OnlineStore.UI
 
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
+            if(Usernametxt.Text.ToString() == "Admin" && Passwordtxt.Password.ToString() == "1234")
+            {
+                IsAdmin = true;
+            }
 
             if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
             {

@@ -70,8 +70,7 @@ namespace OnlineStore.UI.Pages
             UserDetailData = result.Data;
 
             // userDetail.Show();
-            PagesNavigation.Navigate(new System.Uri("Pages/UserPages/UserDetailPage.xaml",
-                UriKind.RelativeOrAbsolute), result.Data);
+            PagesNavigation.Navigate(new System.Uri("Pages/UserPages/UserDetailPage.xaml", UriKind.RelativeOrAbsolute), result.Data);
 
             //this.Close();
         }
@@ -84,6 +83,38 @@ namespace OnlineStore.UI.Pages
         private void rdContacts_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void AddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/AdminPages/AddProductPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void AddCategory_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/AdminPages/AddCategoryPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void AddLocation_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/AdminPages/AddLocationPage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new System.Uri("Pages/AdminPages/AddUserPage.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void home_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(MainWindow.IsAdmin is true)
+            {
+                AddProduct.Visibility = Visibility.Visible;
+                AddCategory.Visibility = Visibility.Visible;
+                AddLocation.Visibility = Visibility.Visible;
+                AddUser.Visibility = Visibility.Visible;
+            }
         }
     }
 }

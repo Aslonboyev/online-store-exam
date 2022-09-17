@@ -8,7 +8,7 @@
         Title="MainPage" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-        ResizeMode="NoResize" WindowState="Normal">
+        ResizeMode="NoResize" WindowState="Normal" Loaded="home_Loaded">
     <Border CornerRadius="8" Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -57,6 +57,19 @@
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
                         <RadioButton x:Name="rdContact" Content="Contact" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdContacts_Click" Checked="rdContacts_Checked"/>
                         <RadioButton x:Name="rdLocation" Content="Location" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdLocation_Click"/>
+                        <RadioButton x:Name="AddProduct" Content="Add Product" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddProduct_Click"/>
+                        <RadioButton x:Name="AddCategory" Content="Add Category" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddCategory_Click"/>
+                        <RadioButton x:Name="AddLocation" Visibility="Hidden" Content="Add Location" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddLocation_Click"/>
+                        <RadioButton x:Name="AddUser" 
+                                     Content="Add User" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource logo}" 
+                                     Click="AddUser_Click"
+                                     Visibility="Hidden"/>
+
+
+
+
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
