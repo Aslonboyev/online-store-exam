@@ -1,4 +1,5 @@
 ﻿using OnlineStore.Domain.Entities.Products;
+using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using OnlineStore.UI.Pages;
@@ -17,6 +18,7 @@ namespace OnlineStore.UI
         public static List<long> ProductsBoxWIthId { get; set; }
         public static List<int> ProductCount { get; set; }
         public static long Id { get; set; }
+        public static List<User> AllUsers { get; set; }
         public static bool IsAdmin { get; set; } = false;
 
         public MainWindow()
