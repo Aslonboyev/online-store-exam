@@ -52,9 +52,12 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 
                 if (result.Data.FirstName is not null)
                 {
+                    MainPage mainPage = new MainPage(0, null);
+                    
+                    mainPage.Show();
 
-                    PagesNavigation.Navigate(new System.Uri("Pages/HomePage.xaml", UriKind.RelativeOrAbsolute));
-
+                    MainWindow.IsAdmin = true;
+                    
                     this.Close();
                 }
                 else

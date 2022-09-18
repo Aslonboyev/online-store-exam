@@ -53,15 +53,16 @@ namespace OnlineStore.UI.Pages.AdminPages
 
         private async Task LoadUsers(List<User> users)
         {
-            foreach (var user in users)
+            for(int i = 0; i < users.Count; i++)
             {
                 await this.Dispatcher.InvokeAsync(() =>
                 {
                     UserItem userItem = new UserItem();
-                    userItem.FullnameCtn.Content = user.FirstName + " " + user.LastName;
-                    userItem.UsernameCtn.Content = user.Username;
-                    userItem.PhoneCtn.Content = user.Phone;
-                    userItem.EmailCtn.Content = user.Email;
+                    userItem.IdCtn.Content = i+1;
+                    userItem.FullnameCtn.Content = users[i].FirstName + " " + users[i].LastName;
+                    userItem.UsernameCtn.Content = users[i].Username;
+                    userItem.PhoneCtn.Content = users[i].Phone;
+                    userItem.EmailCtn.Content = users[i].Email;
 
                     UserListCtn.Children.Add(userItem);
                 });
@@ -70,7 +71,11 @@ namespace OnlineStore.UI.Pages.AdminPages
 
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
+            UserCreate userCreate = new UserCreate();
+            System.Environment.Exit(0);
 
+            userCreate.Show();
+            
         }
     }
 }

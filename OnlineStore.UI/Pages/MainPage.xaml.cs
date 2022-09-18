@@ -113,7 +113,7 @@ namespace OnlineStore.UI.Pages
 
         private void home_Loaded(object sender, RoutedEventArgs e)
         {
-            if(MainWindow.IsAdmin is true)
+            if(MainWindow.IsAdmin)
             {
                 CategoryPage categoryPage = new CategoryPage();
                 categoryPage.Visibility = Visibility.Visible;

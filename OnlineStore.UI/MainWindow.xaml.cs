@@ -1,4 +1,6 @@
-﻿using OnlineStore.Domain.Entities.Products;
+﻿using OnlineStore.Domain.Entities.Categories;
+using OnlineStore.Domain.Entities.Locations;
+using OnlineStore.Domain.Entities.Products;
 using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
@@ -19,6 +21,9 @@ namespace OnlineStore.UI
         public static List<int> ProductCount { get; set; }
         public static long Id { get; set; }
         public static List<User> AllUsers { get; set; }
+        public static List<Product> AllProducts { get; set; }
+        public static List<Category> Categories { get; set; }
+        public static List<Location> Locations { get; set; }
         public static bool IsAdmin { get; set; } = false;
 
         public MainWindow()
@@ -27,6 +32,10 @@ namespace OnlineStore.UI
             _userService = new UserService();
             ProductsBoxWIthId = new List<long>();
             ProductCount = new List<int>();
+            AllUsers = new List<User>();
+            AllProducts = new List<Product>();
+            Categories = new List<Category>();
+            Locations = new List<Location>();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
