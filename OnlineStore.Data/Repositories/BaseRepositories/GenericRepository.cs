@@ -33,6 +33,7 @@ namespace OnlineStore.Data.Repositories.BaseRepositories
 
         public T Update(T entity)
             => _dbSet.Update(entity).Entity;
+
         public Task SaveChangesAsync()
             => _dbContext.SaveChangesAsync();
     }
