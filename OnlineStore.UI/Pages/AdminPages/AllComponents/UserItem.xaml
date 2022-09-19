@@ -10,7 +10,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="1.3*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="1.2*"/>
             <ColumnDefinition/>
@@ -61,7 +61,7 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             
-            <Button 
+            <!--<Button 
                         x:Name="UpdateBtn"
                         md:ButtonAssist.CornerRadius="5" 
                         Background="#242F3D" 
@@ -72,7 +72,7 @@
                     <md:PackIcon Width="20" Height="20"
                                                         Kind="Pencil"
                                                         Foreground="White"/>
-            </Button>
+            </Button>-->
             <Button 
                         x:Name="DeleteBtn"
                         md:ButtonAssist.CornerRadius="5" 

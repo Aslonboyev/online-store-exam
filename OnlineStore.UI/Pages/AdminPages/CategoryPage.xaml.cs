@@ -29,5 +29,10 @@ namespace OnlineStore.UI.Pages.AdminPages
         {
 
         }
+
+        private void AddUserBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

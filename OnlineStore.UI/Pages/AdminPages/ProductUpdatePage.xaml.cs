@@ -13,28 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.AdminPages.AllComponents
+namespace OnlineStore.UI.Pages.AdminPages
 {
     /// <summary>
-    /// Interaction logic for ProductItem.xaml
+    /// Interaction logic for ProductUpdatePage.xaml
     /// </summary>
-    public partial class ProductItem : UserControl
+    public partial class ProductUpdatePage : Page
     {
-        public ProductItem()
+        public ProductUpdatePage()
         {
             InitializeComponent();
-        }
-
-        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-
-            
-        }
-
-        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
         }
     }
 }

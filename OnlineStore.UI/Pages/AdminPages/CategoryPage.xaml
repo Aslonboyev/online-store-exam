@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CategoryPage" Loaded="Page_Loaded">
-    <Border Background="#EFF2F7" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+    <Border Background="#EFF2F7">
         <Grid>
             <!--Left Menu-->
             <!--Main Section-->

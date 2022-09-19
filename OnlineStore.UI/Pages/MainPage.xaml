@@ -57,10 +57,10 @@
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Click="rdHome_Click"/>
                         <RadioButton x:Name="rdContact" Content="Contact" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource headphones}" Margin="0 5 0 5" Click="rdContacts_Click" Checked="rdContacts_Checked"/>
                         <RadioButton x:Name="rdLocation" Content="Location" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource notes}" Click="rdLocation_Click"/>
-                        <RadioButton x:Name="AddProduct" Content="Products" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddProduct_Click"/>
-                        <RadioButton x:Name="AddCategory" Content="Categories" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddCategory_Click"/>
-                        <RadioButton x:Name="AddLocation" Visibility="Hidden" Content="Locations" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddLocation_Click"/>
-                        <RadioButton x:Name="AddUser" 
+                        <RadioButton x:Name="rdAddProduct" Content="Products" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddProduct_Click"/>
+                        <RadioButton x:Name="rdAddCategory" Content="Categories" Visibility="Hidden" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddCategory_Click"/>
+                        <RadioButton x:Name="rdAddLocation" Visibility="Hidden" Content="Locations" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource logo}" Click="AddLocation_Click"/>
+                        <RadioButton x:Name="rdAddUser" 
                                      Content="Users" 
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource logo}" 
@@ -73,15 +73,17 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal" Width="200" Margin="0 0 0 20">
-                        
-                        <Ellipse Width="40" Height="40" Margin="10 0 0 0">
+
+                        <Ellipse x:Name="UserImageBtn" Width="40" Height="40" Margin="10 0 0 0">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="..\Assets\Avatars\images.jpg"/>
+                                <ImageBrush  ImageSource="..\Assets\Avatars\images.jpg"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <Button Margin="10 0 0 0" Click="UserBtn" BorderBrush="Transparent" Background="Transparent">
+                        <Button x:Name="UserBtn"
+                            Margin="10 0 0 0" Click="UserBtn_Click" BorderBrush="Transparent" Background="Transparent">
                             <StackPanel Orientation="Vertical">
-                                <Label x:Name="FirstnameCtn" Content="Temur" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="16" FontWeight="Regular" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="-10 -10 0 0"/>
+                                <Label x:Name="FirstnameCtn" Content="Temur" Foreground="{DynamicResource PrimaryBlueColor}" FontSize="16" FontWeight="Regular" HorizontalContentAlignment="Center"
+                                       HorizontalAlignment="Left" Margin="-10 -10 0 0"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>

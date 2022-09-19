@@ -19,16 +19,28 @@ namespace OnlineStore.UI.Pages
 
         public MainPage(long id, string firstname)
         {
-            _id = id;
-
-            _userService = new UserService();
-
             InitializeComponent();
-
-            //ButtonsStackPanelUI.Children.Add(new RadioButton() { Content = "New birnarsa" });
-
+            _id = id;
+            _userService = new UserService();
             FirstnameCtn.Content = firstname;
-            rdHome_Click(null, null);
+        }
+
+        private void home_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.IsAdmin)
+            {
+                rdHome.Visibility = Visibility.Collapsed;
+                UserBtn.Visibility = Visibility.Collapsed;
+                rdAddCategory.Visibility = Visibility.Visible;
+                rdAddLocation.Visibility = Visibility.Visible;
+                rdAddProduct.Visibility = Visibility.Visible;
+                rdAddUser.Visibility = Visibility.Visible;
+                UserImageBtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                rdHome_Click(null, null);
+            }
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -65,7 +77,7 @@ namespace OnlineStore.UI.Pages
             PagesNavigation.Navigate(new System.Uri("Pages/LocationPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private async void UserBtn(object sender, RoutedEventArgs e)
+        private async void UserBtn_Click(object sender, RoutedEventArgs e)
         {
             if (!MainWindow.IsAdmin)
             {
@@ -109,27 +121,6 @@ namespace OnlineStore.UI.Pages
         {
             PagesNavigation.Navigate(new System.Uri("Pages/AdminPages/UserPage.xaml", UriKind.RelativeOrAbsolute));
 
-        }
-
-        private void home_Loaded(object sender, RoutedEventArgs e)
-        {
-            if(MainWindow.IsAdmin)
-            {
-                CategoryPage categoryPage = new CategoryPage();
-                categoryPage.Visibility = Visibility.Visible;
-
-                ProductPage productPage = new ProductPage();
-                productPage.Visibility = Visibility.Visible;
-
-                AdminLocationPage locationPage = new AdminLocationPage();
-                locationPage.Visibility = Visibility.Visible;
-
-                UserPage userPage = new UserPage();
-                userPage.Visibility = Visibility.Visible;
-
-                HomePage homePage = new HomePage();
-                homePage.Visibility = Visibility.Hidden;
-            }
         }
     }
 }

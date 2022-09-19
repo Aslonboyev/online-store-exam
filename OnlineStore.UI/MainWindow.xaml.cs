@@ -25,6 +25,7 @@ namespace OnlineStore.UI
         public static List<Category> Categories { get; set; }
         public static List<Location> Locations { get; set; }
         public static bool IsAdmin { get; set; } = false;
+        public static Category Category { get; set; } = null;
 
         public MainWindow()
         {
@@ -36,6 +37,7 @@ namespace OnlineStore.UI
             AllProducts = new List<Product>();
             Categories = new List<Category>();
             Locations = new List<Location>();
+            Category = new Category();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)

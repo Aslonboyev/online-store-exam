@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineStore.Domain.Entities.Users;
+using OnlineStore.UI.Pages.UserPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,14 +27,13 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
             InitializeComponent();
         }
 
-        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
+            Button button = (Button)sender;
 
+            UserDeletePage userDeletePage = new UserDeletePage(long.Parse(button.Uid[2..]));
+
+            userDeletePage.Show();
         }
     }
 }

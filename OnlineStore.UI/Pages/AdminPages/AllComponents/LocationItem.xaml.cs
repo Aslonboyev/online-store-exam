@@ -29,5 +29,10 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
         {
 
         }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

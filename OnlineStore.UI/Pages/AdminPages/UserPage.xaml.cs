@@ -63,6 +63,7 @@ namespace OnlineStore.UI.Pages.AdminPages
                     userItem.UsernameCtn.Content = users[i].Username;
                     userItem.PhoneCtn.Content = users[i].Phone;
                     userItem.EmailCtn.Content = users[i].Email;
+                    userItem.DeleteBtn.Uid = $"Id{users[i].Id}";
 
                     UserListCtn.Children.Add(userItem);
                 });
@@ -72,10 +73,9 @@ namespace OnlineStore.UI.Pages.AdminPages
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
             UserCreate userCreate = new UserCreate();
-            System.Environment.Exit(0);
 
             userCreate.Show();
-            
+
         }
     }
 }

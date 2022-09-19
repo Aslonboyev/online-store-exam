@@ -24,5 +24,15 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
         {
             InitializeComponent();
         }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

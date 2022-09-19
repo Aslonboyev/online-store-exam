@@ -16,25 +16,20 @@ using System.Windows.Shapes;
 namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
-    /// Interaction logic for ProductItem.xaml
+    /// Interaction logic for ProductCategoryItem.xaml
     /// </summary>
-    public partial class ProductItem : UserControl
+    public partial class ProductCategoryItem : UserControl
     {
-        public ProductItem()
+        public ProductCategoryItem()
         {
             InitializeComponent();
         }
 
-        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
 
-            
-        }
-
-        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
+            ProductCreatePage.CategoryId = long.Parse(button.Uid[2..]);
         }
     }
 }

@@ -27,6 +27,7 @@ namespace OnlineStore.UI.Pages.HomePages
 
         private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
         {
+            Button button = (Button)sender;
 
         }
     }

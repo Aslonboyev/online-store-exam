@@ -36,7 +36,7 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 
             if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
                     firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
-                    phonetxt.Text is not null && passwordtxt.Password is not null && Check.IsChecked is true)
+                    phonetxt.Text is not null && passwordtxt.Password is not null )
             {
                 UserCreationDTO userCreationDTO = new UserCreationDTO()
                 {
@@ -63,6 +63,11 @@ namespace OnlineStore.UI.Pages.AdminPages.AllComponents
                 else
                     MessageBox.Show("Check your details. \nYour details are already taken or wrong!");
             }
+        }
+
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

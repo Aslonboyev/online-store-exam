@@ -52,30 +52,30 @@ namespace OnlineStore.UI.Pages.AdminPages
 
         private async Task LoadUsers(List<Product> users)
         {
-            foreach (var user in users)
-            {
+            for (int i = 0; i < users.Count; i++)
                 await this.Dispatcher.InvokeAsync(() =>
                 {
                     ProductItem userItem = new ProductItem();
-                    userItem.IdCtn.Content = user.Id+1;
-                    userItem.NameCtn.Content = user.Name;
-                    userItem.DescriptionCtn.Content = user.Description;
-                    userItem.PriceCtn.Content = user.Price;
-                    userItem.QuantityCtn.Content = user.Quantity;
-                    userItem.CategryCtn.Content = user.Category;
+                    userItem.IdCtn.Content = i + 1;
+                    userItem.NameCtn.Content = users[i].Name;
+                    userItem.DescriptionCtn.Content = users[i].Description;
+                    userItem.PriceCtn.Content = users[i].Price;
+                    userItem.QuantityCtn.Content = users[i].Quantity;
+                    userItem.CategryCtn.Content = users[i].Category;
+                    userItem.DeleteBtn.Uid = $"Id{users[i].Id}";
+                    userItem.UpdateBtn.Uid = $"Id{users[i].Id}";
 
                     ProductListCtn.Children.Add(userItem);
                 });
             }
-        }
 
         private void AddUserBtn_Click(object sender, RoutedEventArgs e)
         {
+
             UserCreate userCreate = new UserCreate();
             System.Environment.Exit(0);
 
             userCreate.Show();
-
         }
     }
 }
