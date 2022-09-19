@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.HomePages
+namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
-    /// Interaction logic for CategoryItem.xaml
+    /// Interaction logic for ProductCategoryItem.xaml
     /// </summary>
-    public partial class CategoryItem : UserControl
+    public partial class ProductCategoryItem : UserControl
     {
-        public CategoryItem()
+        public ProductCategoryItem()
         {
             InitializeComponent();
         }
@@ -29,6 +29,7 @@ namespace OnlineStore.UI.Pages.HomePages
         {
             Button button = (Button)sender;
 
+            ProductCreatePage.CategoryId = long.Parse(button.Uid[2..]);
         }
     }
 }

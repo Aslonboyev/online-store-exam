@@ -13,21 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.HomePages
+namespace OnlineStore.UI.Pages.AdminPages
 {
     /// <summary>
-    /// Interaction logic for CategoryItem.xaml
+    /// Interaction logic for CategoryPage.xaml
     /// </summary>
-    public partial class CategoryItem : UserControl
+    public partial class CategoryPage : Page
     {
-        public CategoryItem()
+        public CategoryPage()
         {
             InitializeComponent();
         }
 
-        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
+
+        }
+
+        private void AddUserBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

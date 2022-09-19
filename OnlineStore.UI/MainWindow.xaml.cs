@@ -1,4 +1,7 @@
-﻿using OnlineStore.Domain.Entities.Products;
+﻿using OnlineStore.Domain.Entities.Categories;
+using OnlineStore.Domain.Entities.Locations;
+using OnlineStore.Domain.Entities.Products;
+using OnlineStore.Domain.Entities.Users;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
 using OnlineStore.UI.Pages;
@@ -17,6 +20,12 @@ namespace OnlineStore.UI
         public static List<long> ProductsBoxWIthId { get; set; }
         public static List<int> ProductCount { get; set; }
         public static long Id { get; set; }
+        public static List<User> AllUsers { get; set; }
+        public static List<Product> AllProducts { get; set; }
+        public static List<Category> Categories { get; set; }
+        public static List<Location> Locations { get; set; }
+        public static bool IsAdmin { get; set; } = false;
+        public static Category Category { get; set; } = null;
 
         public MainWindow()
         {
@@ -24,6 +33,11 @@ namespace OnlineStore.UI
             _userService = new UserService();
             ProductsBoxWIthId = new List<long>();
             ProductCount = new List<int>();
+            AllUsers = new List<User>();
+            AllProducts = new List<Product>();
+            Categories = new List<Category>();
+            Locations = new List<Location>();
+            Category = new Category();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
@@ -39,8 +53,16 @@ namespace OnlineStore.UI
 
         private async void LogInBtn(object sender, RoutedEventArgs e)
         {
+            if(Usernametxt.Text.ToString() == "admin" && Passwordtxt.Password.ToString() == "1234")
+            {
+                IsAdmin = true;
 
-            if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
+                MainPage mainPage = new MainPage(0, null);
+                mainPage.Show();
+                this.Close();
+            }
+
+            else if (!string.IsNullOrEmpty(Usernametxt.Text) && !string.IsNullOrEmpty(Passwordtxt.Password))
             {
                 var result = await _userService.LogInAsync(Usernametxt.Text, Passwordtxt.Password);
 

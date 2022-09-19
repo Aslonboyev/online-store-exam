@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineStore.Domain.Entities.Users;
+using OnlineStore.UI.Pages.UserPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,22 +15,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.HomePages
+namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
-    /// Interaction logic for CategoryItem.xaml
+    /// Interaction logic for UserItem.xaml
     /// </summary>
-    public partial class CategoryItem : UserControl
+    public partial class UserItem : UserControl
     {
-        public CategoryItem()
+        public UserItem()
         {
             InitializeComponent();
         }
 
-        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
 
+            UserDeletePage userDeletePage = new UserDeletePage(long.Parse(button.Uid[2..]));
+
+            userDeletePage.Show();
         }
     }
 }

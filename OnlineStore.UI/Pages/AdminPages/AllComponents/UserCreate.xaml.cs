@@ -1,28 +1,42 @@
 ﻿using OnlineStore.Service.DTOs.UserDTOs;
 using OnlineStore.Service.Interfaces;
 using OnlineStore.Service.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages
+namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
-    /// Interaction logic for RegisterPage.xaml
+    /// Interaction logic for UserCreate.xaml
     /// </summary>
-    public partial class RegisterPage : Window
+    public partial class UserCreate : Window
     {
         private readonly IUserService _userService;
 
-        public RegisterPage()
+        public UserCreate()
         {
-            _userService = new UserService();
-
             InitializeComponent();
+         
+            _userService = new UserService();
         }
-        private async void SignUpBtn(object sender, RoutedEventArgs e)
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
+
             if (passwordtxt.Password == repeatPasswordtxt.Password && usernametxt.Text is not null &&
-                firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
-                phonetxt.Text is not null && passwordtxt.Password is not null && Check.IsChecked is true)
+                    firstnametxt.Text is not null && lastnametxt.Text is not null && emailtxt.Text is not null &&
+                    phonetxt.Text is not null && passwordtxt.Password is not null )
             {
                 UserCreationDTO userCreationDTO = new UserCreationDTO()
                 {
@@ -38,9 +52,12 @@ namespace OnlineStore.UI.Pages
 
                 if (result.Data.FirstName is not null)
                 {
-                    MainPage mainWindow = new MainPage(result.Data.Id, result.Data.FirstName);
+                    MainPage mainPage = new MainPage(0, null);
+                    
+                    mainPage.Show();
 
-                    mainWindow.Show();
+                    MainWindow.IsAdmin = true;
+                    
                     this.Close();
                 }
                 else
@@ -48,18 +65,9 @@ namespace OnlineStore.UI.Pages
             }
         }
 
-        private void LoginBtn(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void exitApp(object sender, RoutedEventArgs e)
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
     }
 }

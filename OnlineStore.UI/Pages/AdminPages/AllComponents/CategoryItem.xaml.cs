@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OnlineStore.UI.Pages.HomePages
+namespace OnlineStore.UI.Pages.AdminPages.AllComponents
 {
     /// <summary>
     /// Interaction logic for CategoryItem.xaml
@@ -25,9 +25,13 @@ namespace OnlineStore.UI.Pages.HomePages
             InitializeComponent();
         }
 
-        private void CategoryNameCtn_Click(object sender, RoutedEventArgs e)
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
+
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
